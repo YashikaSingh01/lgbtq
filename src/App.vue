@@ -1,32 +1,56 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
-  </div>
+  <v-app>
+    <v-app-bar
+      app
+      color="rgba(199, 199, 199, 0.5)"
+      dark
+    >
+      <div class="d-flex align-center">
+        <v-img
+          alt="Logo"
+          class="shrink mr-2"
+          contain
+          src="@/assets/logo.png"
+          transition="scale-transition"
+          width="60"
+        />
+      </div>
+
+      <v-spacer></v-spacer>
+
+      <v-btn color="rgba(109, 58, 69, 1)" elevation="2" rounded>
+        <span class="mr-2">Download here</span>
+      </v-btn>
+
+      <!-- <v-btn
+        href="@/views/Login.vue"
+        target="_blank"
+        text
+      > -->
+        <!-- <v-icon>mdi-open-in-new</v-icon> </v-btn>-->
+
+    </v-app-bar>
+
+
+    <v-main>
+      <router-view/>
+    </v-main>
+  </v-app>
+  
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
 
-nav {
-  padding: 30px;
-}
+export default {
+  name: 'App',
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  data: () => ({
+    //
+    
+  }),
+};
+</script>
 
-nav a.router-link-exact-active {
-  color: #42b983;
-}
+<style lang="scss" scoped>
+@import url('@/assets/styles.css');
 </style>
