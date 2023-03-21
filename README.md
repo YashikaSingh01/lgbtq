@@ -1,4 +1,4 @@
-# lgbtq
+# lgbtq application
 
 ## Project setup
 ```
