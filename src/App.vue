@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar
       app
-      color="rgba(199, 199, 199, 0.5)"
+      color="rgba(199, 199, 199, 0.9)"
       dark
     >
       <div class="d-flex align-center">
@@ -17,6 +17,8 @@
       </div>
 
       <v-spacer></v-spacer>
+
+      
 
       <v-btn color="rgba(109, 58, 69, 1)" elevation="2" rounded>
         <span class="mr-2">Download here</span>
@@ -35,12 +37,15 @@
     <v-main>
       <router-view/>
     </v-main>
+
+    <Footer></Footer>
+
   </v-app>
   
 </template>
 
 <script>
-
+import Footer from '@/components/Footer.vue'
 export default {
   name: 'App',
 
@@ -48,6 +53,9 @@ export default {
     //
     
   }),
+  components: {
+    Footer,
+  },
 };
 </script>
 
