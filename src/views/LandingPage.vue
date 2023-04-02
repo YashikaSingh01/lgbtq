@@ -11,7 +11,7 @@
                 </p>
             </v-col>
         </v-row>
-
+ 
         <v-row>
             <v-col cols="2" offset="1">
                 <v-card class="mx-auto rounded-xl center-align" max-width="344" color="purple">
@@ -82,10 +82,6 @@
                 </div>
             </v-col>
         </v-row>
-
-        <br>
-        <br>
-
     </div>
 </template>
 

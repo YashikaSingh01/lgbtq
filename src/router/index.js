@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import LandingPage from '../views/LandingPage.vue'
+import Blogs from '../views/Blogs.vue'
 
 Vue.use(VueRouter)
 
@@ -28,6 +29,11 @@ const routes = [
     path: '/landingPage',
     name: 'landingPage',
     component: LandingPage
+  },
+  {
+    path: '/blogs',
+    name: 'blogs',
+    component: Blogs
   },
 ]
 

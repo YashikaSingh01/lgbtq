@@ -38,7 +38,7 @@
       <router-view/>
     </v-main>
 
-    <Footer></Footer>
+    <Footer style="margin-top: 5%;"></Footer>
 
   </v-app>
   
