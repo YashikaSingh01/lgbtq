@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Carousel></Carousel>
+        <Carousel style="height: 90vh"></Carousel>
         <v-row style="padding-top: 2%;">
             <v-col cols="6" offset="3">
                 <p class="center-align text-below-carousel">FIND A REAL CONNECTION</p>

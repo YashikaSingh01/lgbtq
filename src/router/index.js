@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import LandingPage from '../views/LandingPage.vue'
 import Blogs from '../views/Blogs.vue'
+import Counselling from '../views/Counselling.vue'
 
 Vue.use(VueRouter)
 
@@ -34,6 +35,11 @@ const routes = [
     path: '/blogs',
     name: 'blogs',
     component: Blogs
+  },
+  {
+    path: '/counselling',
+    name: 'counselling',
+    component: Counselling
   },
 ]
 

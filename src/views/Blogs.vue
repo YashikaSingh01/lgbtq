@@ -3,7 +3,8 @@
         <v-sheet color="rgba(248, 237, 237, 1)" height="100%" tile>
             <v-row class="fill-height" align="center" justify="center">
                 <v-col cols="6">
-                    <h3>--insert image--</h3>
+                    <!-- <h3>--insert image--</h3> -->
+                    <v-img src="@/assets/images/pexels-alexander-grey-3738057.jpg" max-height="85vh"></v-img>
                 </v-col>
                 <v-col cols="4" offset="1" >
                     <p class="carousel-text">Blogs.</p>
@@ -21,7 +22,7 @@
             <v-col cols="3" offset="2">
                 <v-card class="blog-card" elevation="10">
                     <v-img class="white--text align-end" height="200px" alt="">
-                        
+
                     </v-img>
 
                     <v-card-title>Don't know how to talk to your parents?</v-card-title>
@@ -46,7 +47,7 @@
             <v-col cols="3" offset="2">
                 <v-card class="blog-card" elevation="10">
                     <v-img class="white--text align-end" height="200px" alt="">
-                        
+
                     </v-img>
 
                     <v-card-title>How I came out being a trans man.</v-card-title>
