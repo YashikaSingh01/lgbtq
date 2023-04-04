@@ -1,8 +1,9 @@
 <template>
     <div>
-        <Carousel style="height: 90vh;"></Carousel>
-        <v-row style="padding-top: 2%;">
+        <Carousel></Carousel>
+        <v-row style="margin-top: 4vh;">
             <v-col cols="6" offset="3">
+                
                 <p class="center-align text-below-carousel">FIND A REAL CONNECTION</p>
                 <p class="center-align text-below-carousel">
                     We also believe in the power of technology to create a community and bring everyone closer.
@@ -12,7 +13,7 @@
             </v-col>
         </v-row>
  
-        <v-row>
+        <v-row >
             <v-col cols="2" offset="1">
                 <v-card class="mx-auto rounded-xl center-align" max-width="344" color="purple">
                     <v-card-text>
