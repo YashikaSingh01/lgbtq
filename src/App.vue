@@ -2,13 +2,13 @@
   <v-app>
     <v-app-bar
       app
-      color="rgba(199, 199, 199, 0.9)"
+      color="rgba(199, 199, 199, 0.5)"
       dark
     >
       <div class="d-flex align-center">
-        <v-img
+        <v-img 
           alt="Logo"
-          class="shrink mr-2"
+          
           contain
           src="@/assets/logo.png"
           transition="scale-transition"
@@ -60,5 +60,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.main-icon {
+  position: relative;
+  top: 50%;
+  left: 1%;
+}
+
 @import url('@/assets/styles.css');
 </style>

@@ -1,13 +1,14 @@
 <template>
-    <div>
+    <div class="carousel-height">
         <v-carousel v-model="cycle" :show-arrows-on-hover="true" :continuous="false" :cycle="cycle" hide-delimiter-background
             delimiter-icon="mdi-minus" delimiter-icon- cycle>
             <v-carousel-item>
-                <v-sheet color="rgba(248, 237, 237, 1)" height="100%" tile>
+                <v-sheet class="" color="rgba(248, 237, 237, 1)" style="height: 100%;" tile>
                     <v-row class="fill-height" align="center" justify="center">
                         <v-col cols="6">
-                            <!-- <h3>--insert image--</h3> -->
-                            <v-img src="@/assets/images/pexels-alexander-grey-3738057.jpg"></v-img>
+                            <v-img src="@/assets/images/pexels-alexander-grey-3738057.jpg" contain>
+
+                            </v-img>
                         </v-col>
                         <v-col cols="6">
                             <p class="carousel-text">The dating app designed to be deleted</p>
@@ -58,5 +59,9 @@ export default {
         margin-left: 26%;
         margin-right: 10%;
         color: rgba(109, 58, 69, 1);
+    }
+
+    .carousel-height{
+        height: 85vh;
     }
 </style>

@@ -18,7 +18,7 @@ Talk it out loud with pride!
 
         <v-row style="margin-top: 10vh;">
             <v-col cols="2" offset="1">
-                <v-card class="mx-auto rounded-xl center-align" max-width="344" color="purple">
+                <v-card class="mx-auto rounded-xl center-align" max-width="344" color="#F0E3F5">
                     <v-card-text>
                         <v-icon x-large style="text-align: center; margin-top: 2vh;">mdi-wechat</v-icon>
                         <p class="text-h5 text--primary" style="margin-top: 2vh">
