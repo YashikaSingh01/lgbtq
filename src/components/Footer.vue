@@ -6,8 +6,7 @@
 
                 </v-img>
             </v-col>
-            <v-col cols="1"></v-col>
-            <v-col cols="2">
+            <v-col cols="2" offset="1">
                 <v-list class="footer-list">
                     <v-list-item dark>
                         <v-list-item-content>
@@ -24,7 +23,7 @@
                             <v-list-item-title class="footer-list-item">
                                 Blog
                             </v-list-item-title>
-                            <v-list-item-title class="footer-list-item">
+                            <v-list-item-title class="">
                                 Contact
                                 <v-icon>mdi-instagram</v-icon>
                             </v-list-item-title>
@@ -43,7 +42,7 @@
                             <v-list-item-title class="footer-list-item">
                                 FAQs
                             </v-list-item-title>
-                            <v-list-item-title class="footer-list-item">
+                            <v-list-item-title class="">
                                 Trust and Safety
                             </v-list-item-title>
                         </v-list-item-content>
@@ -70,7 +69,7 @@
                             <v-list-item-title class="footer-list-item">
                                 Cookie Policy
                             </v-list-item-title>
-                            <v-list-item-title class="footer-list-item">
+                            <v-list-item-title class="">
                                 Cookie Settings
                             </v-list-item-title>
                         </v-list-item-content>

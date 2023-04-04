@@ -6,7 +6,7 @@
                     <!-- <h3>--insert image--</h3> -->
                     <v-img src="@/assets/images/pexels-alexander-grey-3738057.jpg" max-height="85vh"></v-img>
                 </v-col>
-                <v-col cols="6">
+                <v-col cols="4" offset="1" >
                     <p class="carousel-text">Blogs.</p>
                     <p class="carousel-text-small">
                         Help the pride members in this significant phase of their lives. <br>
@@ -38,7 +38,7 @@
                     </v-card-text>
 
                     <v-card-actions>
-                        <v-btn color="orange" text>
+                        <v-btn color="rgba(109, 58, 69, 1)" text>
                             Read Now
                         </v-btn>
                     </v-card-actions>
@@ -63,7 +63,7 @@
                     </v-card-text>
 
                     <v-card-actions>
-                        <v-btn color="orange" text>
+                        <v-btn color="rgba(109, 58, 69, 1)" text>
                             Read Now
                         </v-btn>
                     </v-card-actions>
@@ -89,7 +89,7 @@
                     </v-card-text>
 
                     <v-card-actions>
-                        <v-btn color="orange" text>
+                        <v-btn color="rgba(109, 58, 69, 1)" text>
                             Read Now
                         </v-btn>
                     </v-card-actions>
@@ -112,7 +112,7 @@
                     </v-card-text>
 
                     <v-card-actions>
-                        <v-btn color="orange" text>
+                        <v-btn color="rgba(109, 58, 69, 1)" text>
                             Read Now
                         </v-btn>
                     </v-card-actions>
@@ -138,7 +138,7 @@
                     </v-card-text>
 
                     <v-card-actions>
-                        <v-btn color="orange" text>
+                        <v-btn color="rgba(109, 58, 69, 1)" text>
                             Read Now
                         </v-btn>
                     </v-card-actions>
@@ -161,7 +161,7 @@
                     </v-card-text>
 
                     <v-card-actions>
-                        <v-btn color="orange" text>
+                        <v-btn color="rgba(109, 58, 69, 1)" text>
                             Read Now
                         </v-btn>
                     </v-card-actions>
@@ -181,7 +181,6 @@ export default {
 .carousel-text {
     align-self: center;
     font-size: 300%;
-    margin-left: 26%;
     margin-right: 10%;
     color: rgba(109, 58, 69, 1);
 }
@@ -189,7 +188,6 @@ export default {
 .carousel-text-small {
     align-self: center;
     font-size: 150%;
-    margin-left: 26%;
     margin-right: 10%;
     color: rgba(109, 58, 69, 1);
 }

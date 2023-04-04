@@ -5,14 +5,14 @@
       color="rgba(199, 199, 199, 0.5)"
       dark
     >
-      <div class="d-flex align-center">
-        <v-img 
+      <div class="d-flex align-center main-icon">
+        <v-img
           alt="Logo"
-          
+          class="shrink mr-2"
           contain
           src="@/assets/logo.png"
           transition="scale-transition"
-          width="60"
+          width="95"
         />
       </div>
 
@@ -60,12 +60,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import url('@/assets/styles.css');
 
 .main-icon {
   position: relative;
-  top: 50%;
+  top: 60%;
   left: 1%;
 }
-
-@import url('@/assets/styles.css');
 </style>
