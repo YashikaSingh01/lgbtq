@@ -1,16 +1,15 @@
 <template>
     <div>
 
-        <v-carousel v-model="cycle" :show-arrows="false" :continuous="false" :cycle="cycle" hide-delimiter-background hide-delimiters 
-        cycle height="90vh">
+        <v-carousel v-model="cycle" :show-arrows="false" :continuous="false" :cycle="cycle" hide-delimiter-background hide-delimiters height="90vh">
             <v-carousel-item>
             <v-sheet class="" color="rgba(248, 237, 237, 1)" height="" tile>
-                <v-row class="fill-height" align="center" justify="center">
+                <v-row class="fill-height" >
                     <v-col cols="6">
                         <!-- <h3>--insert image--</h3> -->
-                        <v-img src="@/assets/images/pexels-alexander-grey-3738057.jpg" height="90vh"></v-img>
+                        <v-img src="@/assets/images/pexels-alexander-grey-3738057.jpg" height="90vh" width="100%"></v-img>
                     </v-col>
-                    <v-col cols="4" offset="1">
+                    <v-col cols="5" offset="1" align-self="center">
                         <p class="carousel-text">Blogs</p>
                         <p class="carousel-text-small">
                             Help the pride members in this significant phase of their lives. <br>

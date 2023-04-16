@@ -1,7 +1,6 @@
 <template>
     <div>
-        <v-carousel v-model="cycle" :show-arrows="false" :continuous="false" :cycle="cycle" hide-delimiter-background hide-delimiters 
-        cycle height="90vh">
+        <v-carousel v-model="cycle" :show-arrows="false" :continuous="false" :cycle="cycle" hide-delimiter-background hide-delimiters height="90vh">
             <v-carousel-item>
             <v-sheet class="" color="rgba(248, 237, 237, 1)" height="" tile>
                 <v-row class="fill-height" align="center" justify="center">
@@ -25,7 +24,9 @@
 
         <v-row style="margin-top: 10vh;">
             <v-col cols="2" offset="1">
+                
                 <v-card class="mx-auto rounded-xl center-align" max-width="344" color="#F0E3F5">
+                    <v-sheet class="" color="rgba(154, 67, 185, 1)" height="1vh"></v-sheet>
                     <v-card-text>
                         <v-icon x-large style="text-align: center; margin-top: 2vh;">mdi-wechat</v-icon>
                         <p class="text-h5 text--primary" style="margin-top: 2vh">
@@ -37,6 +38,7 @@
                     </v-card-text>
                 </v-card>
             </v-col>
+
             <v-col cols="2" offset="2">
                 <v-card class="mx-auto rounded-xl center-align" max-width="344" color="yellow">
                     <v-card-text>
@@ -49,6 +51,7 @@
                             LGBTQ+ members
                         </p>
                     </v-card-text>
+
                 </v-card>
             </v-col>
             <v-col cols="2" offset="2">

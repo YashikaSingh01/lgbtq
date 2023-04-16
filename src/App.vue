@@ -20,9 +20,9 @@
 
       
 
-      <v-btn color="rgba(109, 58, 69, 1)" elevation="2" rounded>
+      <!-- <v-btn color="rgba(109, 58, 69, 1)" elevation="2" rounded>
         <span class="mr-2">Download here</span>
-      </v-btn>
+      </v-btn> -->
 
       <!-- <v-btn
         href="@/views/Login.vue"
