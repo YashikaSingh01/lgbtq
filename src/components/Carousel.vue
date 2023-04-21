@@ -12,7 +12,8 @@
                             </v-img>
                         </v-col>
                         <v-col cols="6">
-                            <p class="carousel-text">The dating app designed to be deleted</p>
+                            <!-- <p class="carousel-text">The dating app designed to be deleted</p> -->
+                            <p class="carousel-text">Get your rainbow on and find your pot of gold</p>
                         </v-col>
                     </v-row>
                 </v-sheet>

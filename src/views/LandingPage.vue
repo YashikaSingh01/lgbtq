@@ -15,7 +15,7 @@
  
         <v-row >
             <v-col cols="2" offset="1">
-                <v-card class="mx-auto rounded-xl center-align" max-width="344" color="purple">
+                <v-card class="mx-auto rounded-xl center-align" max-width="344" height="30vh" color="purple">
                     <v-card-text>
                         <v-icon x-large style="text-align: center;">mdi-wechat</v-icon>
                         <p class="text-h4 text--primary">
@@ -28,11 +28,11 @@
                 </v-card>
             </v-col>
             <v-col cols="2" offset="2">
-                <v-card class="mx-auto rounded-xl center-align" max-width="344" color="yellow">
+                <v-card class="mx-auto rounded-xl center-align" max-width="344" height="30vh" color="yellow">
                     <v-card-text>
                         <v-icon x-large style="text-align: center;">mdi-notebook-edit</v-icon>
                         <p class="text-h4 text--primary">
-                            Blogs!
+                            Blogs
                         </p>
                         <p class="text--primary">
                             Read blogs! Read people's experiences. Read how they came out and what worked best for them.
@@ -41,11 +41,11 @@
                 </v-card>
             </v-col>
             <v-col cols="2" offset="2">
-                <v-card class="mx-auto rounded-xl center-align" max-width="344" color="green">
+                <v-card class="mx-auto rounded-xl center-align" max-width="344" height="30vh" color="green">
                     <v-card-text>
                         <v-icon x-large style="text-align: center;">mdi-heart-outline</v-icon>
                         <p class="text-h4 text--primary">
-                            A Safe Space
+                            Safe Space
                         </p>
                         <div class="text--primary">
                             Often queer people, we need queer spaces - because the only way to make connections is by
@@ -61,7 +61,7 @@
         <v-row>
             <v-col cols="10" offset="1">
                 <div class="blogs-div rounded-xl">
-                    <v-row>
+                    <v-row style="height: 55vh;" align="start">
                         <v-col cols="6">
                             <p class="center-align coming-out-text" style="padding: 5%">
                                 Coming out is a beautiful experience. But, it is HARD. It is hard to step outside of the
@@ -73,11 +73,16 @@
                                 and
                                 rewarding experience for our users. And they can do it all without coming out!
                             </p>
-                            <div class="center-align-button">
+                            <!-- <div class="center-align-button">
                                 <v-btn color="rgba(109, 58, 69, 1)" elevation="2" rounded dark>
                                     <span class="mr-2">Download here</span>
                                 </v-btn>
-                            </div>
+                            </div> -->
+                        </v-col>
+                        <v-col cols="6">
+                            <v-img class="rounded-xl" height="51vh" src="@/assets/images/pexels-alexander-grey-3738057.jpg">                            
+
+                            </v-img>
                         </v-col>
                     </v-row>
                 </div>
@@ -118,5 +123,7 @@ export default {
 
 .coming-out-text {
     margin: 5%;
+    font-size: 120%;
 }
+
 </style>

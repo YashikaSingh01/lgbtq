@@ -4,6 +4,7 @@ import HomeView from '../views/HomeView.vue'
 import LandingPage from '../views/LandingPage.vue'
 import Blogs from '../views/Blogs.vue'
 import Counselling from '../views/Counselling.vue'
+import Blog1 from '../views/Blog1.vue'
 
 Vue.use(VueRouter)
 
@@ -30,6 +31,11 @@ const routes = [
     path: '/landingPage',
     name: 'landingPage',
     component: LandingPage
+  },
+  {
+    path: '/blog1',
+    name: 'blog1',
+    component: Blog1
   },
   {
     path: '/blogs',
