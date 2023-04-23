@@ -2,7 +2,7 @@
     <div class="black-bg text-white">
         <v-row>
             <v-col cols="4" offset="1">
-                <v-img class="footer-img" src="@/assets/logo.png" alt="Logo" contain max-width="100" max-height="100">
+                <v-img class="footer-img" src="@/assets/logo (white).png" alt="Logo" contain max-width="100" max-height="100">
 
                 </v-img>
             </v-col>
