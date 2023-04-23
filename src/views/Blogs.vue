@@ -1,10 +1,10 @@
 <template>
     <div>
-        <v-sheet color="rgba(248, 237, 237, 1)" height="100%" tile>
+        <v-sheet color="rgba(248, 237, 237, 1)" height="100vh" tile>
             <v-row class="fill-height" align="center" justify="center">
                 <v-col cols="6">
                     <!-- <h3>--insert image--</h3> -->
-                    <v-img src="@/assets/images/pexels-alexander-grey-3738057.jpg" max-height="85vh"></v-img>
+                    <v-img src="@/assets/images/pexels-alexander-grey-3738057.jpg" max-height="100vh"></v-img>
                 </v-col>
                 <v-col cols="4" offset="1" >
                     <p class="carousel-text">Blogs.</p>
