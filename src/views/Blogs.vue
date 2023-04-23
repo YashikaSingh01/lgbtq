@@ -42,12 +42,12 @@
 
         <v-row style="padding-top: 5%;">
             <v-col cols="3" offset="2">
-                <v-card class="blog-card" elevation="10" height="60vh">
+                <v-card class="blog-card" elevation="10" height="65vh">
                     <v-img class="white--text align-end" height="60%" alt="" src="@/assets/images/pexels-marta-branco-1173576.jpg">
 
                     </v-img>
 
-                    <v-card-title>Don't know how to come out?</v-card-title>
+                    <v-card-title style="word-break: keep-all">Don't know how to tell to your parents?</v-card-title>
 
                     <v-card-subtitle class="pb-0">
                         3 minute read.
@@ -67,7 +67,7 @@
                 </v-card>
             </v-col>
             <v-col cols="3" offset="2">
-                <v-card class="blog-card" elevation="10" height="60vh">
+                <v-card class="blog-card" elevation="10" height="65vh">
                     <v-img class="white--text align-end" height="60%" alt="" src="@/assets/images/pexels-alexander-grey-3802075.jpg">
 
                     </v-img>
