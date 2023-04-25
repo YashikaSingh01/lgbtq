@@ -19,8 +19,15 @@
     </div>
 </template>
 
+
+
 <script>
+
+import axios from 'axios'
+
 export default {
+    
+
     data() {
         return {
             username: "",
@@ -50,9 +57,26 @@ export default {
     },
 
     methods: {
-        submit() {
-            if (!this.alertMessage) {
-                this.$router.push('/landingPage')
+        async submit () {
+            if (this.alertMessage) {
+                // this.$router.push('/landingPage')
+                return
+            }
+            
+            const obj = {username: this.username, password: this.password}
+            console.log(obj)
+
+            try {
+                const response = await axios.post('http://localhost:3000/login',
+                    {username: this.username, password: this.password}).then
+                const success = (response.status === 201)
+
+                if(success) {
+                    this.$router.push('/landingPage')
+                }
+            }
+            catch (err) {
+                console.log(err)
             }
 
         }
