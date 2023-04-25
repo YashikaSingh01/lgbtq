@@ -24,45 +24,41 @@
 
         <v-row style="margin-top: 10vh;">
             <v-col cols="2" offset="1">
-                
-                <v-card class="mx-auto rounded-xl center-align" max-width="344" color="#F0E3F5">
-                    <v-sheet class="" color="rgba(154, 67, 185, 1)" height="1vh"></v-sheet>
+                <v-card class="mx-auto rounded-xl center-align" max-width="344" height="30vh" color="purple">
                     <v-card-text>
-                        <v-icon x-large style="text-align: center; margin-top: 2vh;">mdi-wechat</v-icon>
-                        <p class="text-h5 text--primary" style="margin-top: 2vh">
-                            Tell us about yourself
+                        <v-icon x-large style="text-align: center;">mdi-wechat</v-icon>
+                        <p class="text-h4 text--primary">
+                            Talk it out
                         </p>
                         <div class="text--primary">
-                            Pride Counselling is accepting of people from every gender, orientation, and identity.
+                            You can talk to counsellors about coming out and how adapting to this change is affecting you.
                         </div>
                     </v-card-text>
                 </v-card>
             </v-col>
-
             <v-col cols="2" offset="2">
-                <v-card class="mx-auto rounded-xl center-align" max-width="344" color="yellow">
+                <v-card class="mx-auto rounded-xl center-align" max-width="344" height="30vh" color="yellow">
                     <v-card-text>
                         <v-icon x-large style="text-align: center;">mdi-notebook-edit</v-icon>
-                        <p class="text-h5 text--primary" style="margin-top: 2vh;">
-                            Get matched to a licensed therapist
+                        <p class="text-h4 text--primary">
+                            Blogs
                         </p>
                         <p class="text--primary">
-                            Our therapists have relevant expertise, experience, and training to provide therapy services for
-                            LGBTQ+ members
+                            Read blogs! Read people's experiences. Read how they came out and what worked best for them.
                         </p>
                     </v-card-text>
-
                 </v-card>
             </v-col>
             <v-col cols="2" offset="2">
-                <v-card class="mx-auto rounded-xl center-align" max-width="344" color="green">
+                <v-card class="mx-auto rounded-xl center-align" max-width="344" height="30vh" color="green">
                     <v-card-text>
                         <v-icon x-large style="text-align: center;">mdi-heart-outline</v-icon>
-                        <p class="text-h5 text--primary" style="margin-top: 2vh">
-                            Start talking!
+                        <p class="text-h4 text--primary">
+                            Safe Space
                         </p>
                         <div class="text--primary">
-                            Message whenever you want. Schedule sessions that work with your schedule.
+                            Often queer people, we need queer spaces - because the only way to make connections is by
+                            feeling safe.
                         </div>
                     </v-card-text>
                 </v-card>
