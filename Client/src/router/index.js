@@ -5,7 +5,6 @@ import LandingPage from '../views/LandingPage.vue'
 import Blogs from '../views/Blogs.vue'
 import Counselling from '../views/Counselling.vue'
 import Blog1 from '../views/Blog1.vue'
-import AddBlog from '../views/AddBlog.vue'
 
 Vue.use(VueRouter)
 
@@ -42,11 +41,6 @@ const routes = [
     path: '/blogs',
     name: 'blogs',
     component: Blogs
-  },
-  {
-    path: '/addBlog',
-    name: 'addblog',
-    component: AddBlog
   },
   {
     path: '/counselling',
