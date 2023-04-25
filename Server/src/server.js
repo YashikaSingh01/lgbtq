@@ -4,12 +4,23 @@ import bodyParser from 'body-parser'
 const app = express()
 app.use(bodyParser.json()) //Parses the json object which we have included with our req body and adds a body property to req
 
-app.get('/hello', (req, res) => {
-    res.send('HellO')
-});
+// app.get('/hello', (req, res) => {
+//     res.send('HellO')
+// });
 
-app.post('/hello', (req, res) => {
-    res.send(`Hello ${req.body.name}`)
+// app.post('/hello', (req, res) => {
+//     res.send(`Hello ${req.body.name}`)
+// })
+
+app.get('api/blogs/:blogId', (req, res) => {
+    const { blogId } = req.params
+    const blog = blogs.find([blog.id === blogId])
+    if(product) {
+        res.status(200).json(blog)
+    }
+    else {
+        res.status(404).json('Blog does not exist')
+    }
 })
 
 app.listen(8000, () => {
