@@ -50,6 +50,8 @@ app.post('/api/login', async (req, res) => {
     client.close()
 })
 
+app.post('api/signup', async)
+
 app.get('api/blogs/:blogId', async (req, res) => {
     const { blogId } = req.params
     const blog = blogs.find((blog) => blog.id === blogId)
