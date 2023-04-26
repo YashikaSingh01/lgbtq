@@ -6,6 +6,7 @@ import Blogs from '../views/Blogs.vue'
 import Counselling from '../views/Counselling.vue'
 import Blog1 from '../views/Blog1.vue'
 import AddBlog from '../views/AddBlog.vue'
+// import Register from '../views/Register.vue';
 
 Vue.use(VueRouter)
 
@@ -19,6 +20,11 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: () => import('../views/Register.vue')
   },
   {
     path: '/about',

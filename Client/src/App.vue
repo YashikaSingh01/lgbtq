@@ -45,6 +45,10 @@
         <!-- <span @click="goToCounselling">Counselling</span> -->
         <v-btn text color="rgba(109, 58, 69, 1)" style="font-size: 100%;" @click="goToCounselling">COUNSELLING</v-btn>
       </div>
+
+    <div class="mr-2" style="margin-left: 3vh;">
+        <v-btn text color="rgba(109, 58, 69, 1)" style="font-size: 100%;" @click="goToLogin">LOGIN</v-btn>
+      </div>
     </div>
 
       
@@ -95,7 +99,11 @@ export default {
     },
     goToCounselling() {
       this.$router.push('/counselling')
-    }
+    },
+    goToLogin() {
+      this.$router.push('/')
+    },
+
   },
 };
 </script>
