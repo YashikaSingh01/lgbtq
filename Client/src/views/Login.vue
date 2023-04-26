@@ -62,14 +62,12 @@ export default {
                 // this.$router.push('/landingPage')
                 return
             }
-            
-            const obj = {username: this.username, password: this.password}
-            console.log(obj)
 
             try {
-                const response = await axios.post('http://localhost:3000/login',
-                    {username: this.username, password: this.password}).then
-                const success = (response.status === 201)
+                const response = await axios.post('//localhost:8000/api/login', {username: this.username, password: this.password})
+
+                const success = response.status
+                console.log(success)
 
                 if(success) {
                     this.$router.push('/landingPage')

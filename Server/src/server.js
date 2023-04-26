@@ -1,9 +1,12 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import { MongoClient } from 'mongodb'
+import cors from 'cors'
 
 const app = express()
+app.use(express.json())
 app.use(bodyParser.json()) //Parses the json object which we have included with our req body and adds a body property to req
+app.use(cors())
 
 // app.get('/hello', (req, res) => {
 //     res.send('HellO')
@@ -23,7 +26,7 @@ app.get('/trial', async (req, res) => {
     client.close()
 })
 
-app.get('/login', async (req, res) => {
+app.post('/api/login', async (req, res) => {
     const client = await MongoClient.connect('mongodb://localhost:27017', {useNewUrlParser: true, useUnifiedTopology: true})
     const db = client.db('lgbtq')
 
@@ -31,14 +34,17 @@ app.get('/login', async (req, res) => {
     const password = req.body.password
 
     const user = await db.collection('Users').findOne({user_id: username})
-    
-    const actualPassword = user.password
 
-    if(user && password === actualPassword) {
-        res.status(200).json('Login Successful!')
+    if(user) {
+        const actualPassword = user.password
+        
+        if(password === actualPassword)
+            res.status(200).json('Login Successful!')
+        else
+            res.status(404).json('Incorrect Username or Password')    
     }
     else {
-        res.status(404).json(user)
+        res.status(404).json('Could not find user')
     }
 
     client.close()
@@ -58,3 +64,17 @@ app.get('api/blogs/:blogId', async (req, res) => {
 app.listen(8000, () => {
     console.log('Server is listening on port 8000!')
 });
+
+
+
+
+
+
+// app.use((req, res, next) => {
+//     res.setHeader("Access-Control-Allow-Origin", "http://localhost:8080");
+//     res.header(
+//       "Access-Control-Allow-Headers",
+//       "Origin, X-Requested-With, Content-Type, Accept"
+//     );
+//     next();
+//   });
