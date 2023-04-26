@@ -1,6 +1,6 @@
 <template>
     <div class="center">
-        <v-row style="margin-top: 5vh;">
+        <v-row style="margin-top: 5vh;" >
             <v-col cols="10" offset="1" style="background-color: rgba(248, 237, 237, 1);">
                 <!-- <h1 style="color: white;">Login Page</h1> -->
                 <div>
@@ -11,7 +11,7 @@
                             </v-avatar>
                         </v-col>
                         <v-col cols="4" offset="2" align-self="center">
-                            <p class="addBlogHeadingText">ADD A BLOG</p>
+                            <p class="addBlogHeadingText">WRITE A BLOG</p>
                         </v-col>
                     </v-row>
 
