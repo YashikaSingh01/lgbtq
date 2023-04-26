@@ -1,8 +1,7 @@
 <template>
     <div class="center">
         <v-row style="margin-top: 5vh;">
-            <v-col cols="4" offset="4"
-                style="background-color: rgba(248, 237, 237, 1);">
+            <v-col cols="4" offset="4" style="background-color: rgba(248, 237, 237, 1);">
                 <!-- <h1 style="color: white;">Login Page</h1> -->
                 <v-avatar size="100" tile>
                     <v-img src="@/assets/logo.png"></v-img>
@@ -10,59 +9,121 @@
                 <v-text-field label="Username" v-model="username" style="margin-top: 2vh;"></v-text-field>
                 <v-text-field label="Password" type="password" v-model="password" style="margin-top: 2vh;"></v-text-field>
                 <v-btn block elevation="2" @click="submit" style="margin-top: 2vh;">
-                    SIGN UP
+                    SIGN IN
                 </v-btn>
 
 
                 <!-- <v-row style="margin-top: 2vh;"> -->
-                    <v-dialog v-model="dialog" persistent max-width="600px" >
-                        <template v-slot:activator="{ on, attrs }">
-                            <v-btn block color="" v-bind="attrs" v-on="on" style="margin-top: 2vh;">
-                                REGISTER
+                <v-dialog v-model="dialog" persistent max-width="600px">
+                    <template v-slot:activator="{ on, attrs }">
+                        <v-btn block color="" v-bind="attrs" v-on="on" style="margin-top: 2vh;">
+                            REGISTER
+                        </v-btn>
+                    </template>
+                    <v-card>
+                        <v-card-title>
+                            <span class="text-h5">User Profile</span>
+                        </v-card-title>
+                        <v-card-text>
+                            <v-container>
+                                <v-row>
+                                    <v-col cols="12" sm="6">
+                                        <v-text-field label="First name*" v-model="fname" required></v-text-field>
+                                    </v-col>
+                                    <v-col cols="12" sm="6">
+                                        <v-text-field label="Last name*" v-model="lname"></v-text-field>
+                                    </v-col>
+                                    <v-col cols="12">
+                                        <v-text-field label="Email*" required v-model="username"></v-text-field>
+                                    </v-col>
+                                    <v-col cols="12" sm="6">
+                                        <v-text-field label="Password*" type="password" required
+                                            v-model="password"></v-text-field>
+                                    </v-col>
+                                    <v-col cols="12" sm="6">
+                                        <v-text-field label="Confirm Password*" type="password" 
+                                        v-model="c_pass" required></v-text-field>
+                                    </v-col>
+                                    <v-col cols="12" sm="6">
+                                        <!-- <v-text-field label="Date of Birth*" required></v-text-field> -->
+
+                                        <v-menu ref="menu" v-model="menu" :close-on-content-click="false"
+                                            transition="scale-transition" offset-y min-width="auto">
+                                            <template v-slot:activator="{ on, attrs }">
+                                                <v-text-field v-model="date" label="Date of birth*"
+                                                    prepend-icon="mdi-calendar" readonly v-bind="attrs" v-on="on"
+                                                    required></v-text-field>
+                                            </template>
+                                            <v-date-picker v-model="date" :active-picker.sync="activePicker"
+                                                :max="(new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10)"
+                                                min="1950-01-01" @change="save"></v-date-picker>
+                                        </v-menu>
+
+
+                                    </v-col>
+                                    <v-col cols="12" sm="6">
+                                        <v-autocomplete
+                                            :items="['Female', 'Male', 'Trans', 'Agender', 'Gender-neutral', 'Non-binary', 'Other']"
+                                            label="Gender*" v-model="gender" required></v-autocomplete>
+                                    </v-col>
+                                    <v-col cols="12">
+                                        <v-autocomplete
+                                            :items="['Female', 'Male', 'Trans', 'Agender', 'Gender-neutral', 'Non-binary', 'Other']"
+                                            label="Preferences*" multiple required v-model="pref"></v-autocomplete>
+                                    </v-col>
+                                    <v-col cols="12" sm="6">
+                                        <v-area label="About"></v-area>
+                                    </v-col>
+                                </v-row>
+                            </v-container>
+                            <small>*indicates required field</small>
+                        </v-card-text>
+                        <v-card-actions>
+                            <v-spacer></v-spacer>
+                            <v-btn color="blue darken-1" text @click="dialog = false">
+                                Close
                             </v-btn>
-                        </template>
-                        <v-card>
-                            <v-card-title>
-                                <span class="text-h5">User Profile</span>
-                            </v-card-title>
-                            <v-card-text>
-                                <v-container>
-                                    <v-row>
-                                        <v-col cols="12" sm="6" md="4">
-                                            <v-text-field label="First name*" required></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="6" md="4">
-                                            <v-text-field label="Last name*" hint=""></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12">
-                                            <v-text-field label="Email*" required></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12">
-                                            <v-text-field label="Password*" type="password" required></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="6">
-                                            <v-text-field label="Age*" required></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="6">
-                                            <v-autocomplete
-                                                :items="['Lesbian', 'Gay', 'Bisexual', 'Trans', 'Queer', 'Pansexual', 'Other']"
-                                                label="Gender"></v-autocomplete>
-                                        </v-col>
-                                    </v-row>
-                                </v-container>
-                                <small>*indicates required field</small>
-                            </v-card-text>
-                            <v-card-actions>
-                                <v-spacer></v-spacer>
-                                <v-btn color="blue darken-1" text @click="dialog = false">
-                                    Close
-                                </v-btn>
-                                <v-btn color="blue darken-1" text @click="dialog = false">
-                                    Save
-                                </v-btn>
-                            </v-card-actions>
-                        </v-card>
-                    </v-dialog>
+
+
+                            <v-dialog v-model="dialog1" persistent max-width="600px">
+                                <template v-slot:activator="{ on, attrs }">
+                                    <v-btn color="blue darken-1" text v-bind="attrs" v-on="on">
+                                        Next
+                                    </v-btn>
+                                </template>
+                                <v-card>
+                                    <v-card-title>
+                                        <span class="text-h5">Upload pictures</span>
+                                    </v-card-title>
+                                    <v-card-text>
+                                        <v-container>
+                                            <v-btn color="blue-grey"
+                                                class="ma-2 white--text" @click="loader = 'loading'">
+                                                Upload
+                                                <v-icon right dark>
+                                                    mdi-cloud-upload
+                                                </v-icon>
+                                            </v-btn>
+                                        </v-container>
+                                    </v-card-text>
+
+                                    <v-card-actions>
+                                        <v-spacer></v-spacer>
+                                        <v-btn color="blue darken-1" text @click="dialog1 = false">
+                                            Back
+                                        </v-btn>
+                                        <v-btn color="blue darken-1" text @click="dialog1 = false">
+                                            Save
+                                        </v-btn>
+                                    </v-card-actions>
+                                </v-card>
+
+                            </v-dialog>
+
+
+                        </v-card-actions>
+                    </v-card>
+                </v-dialog>
                 <!-- </v-row> -->
 
 
@@ -85,8 +146,25 @@ export default {
         return {
             username: "",
             password: "",
-            dialog: false
+            dialog: false,
+            dialog1: false,
+            fname: "",
+            lname: "",
+            c_pass: "",
+            gender: "",
+            pref: [],
+
+            activePicker: null,
+            date: null,
+            menu: false,
+
         }
+    },
+
+    watch: {
+        menu(val) {
+            val && setTimeout(() => (this.activePicker = 'YEAR'))
+        },
     },
 
     computed: {
@@ -110,19 +188,23 @@ export default {
     },
 
     methods: {
-        async submit () {
+        save(date) {
+            this.$refs.menu.save(date)
+        },
+
+        async submit() {
             if (this.alertMessage) {
                 // this.$router.push('/landingPage')
                 return
             }
 
             try {
-                const response = await axios.post('//localhost:8000/api/login', {username: this.username, password: this.password})
+                const response = await axios.post('//localhost:8000/api/login', { username: this.username, password: this.password })
 
                 const success = response.status
                 console.log(success)
 
-                if(success) {
+                if (success) {
                     this.$router.push('/landingPage')
                 }
             }
