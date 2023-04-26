@@ -20,11 +20,11 @@ const routes = [
     name: 'home',
     component: HomeView
   },
-  {
-    path: '/register',
-    name: 'register',
-    component: () => import('../views/Register.vue')
-  },
+  // {
+  //   path: '/register',
+  //   name: 'register',
+  //   component: () => import('../views/Register.vue')
+  // },
   {
     path: '/about',
     name: 'about',
