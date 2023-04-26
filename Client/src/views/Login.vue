@@ -28,10 +28,10 @@
                             <v-container>
                                 <v-row>
                                     <v-col cols="12" sm="6">
-                                        <v-text-field label="First name*" v-model="fname" required></v-text-field>
+                                        <v-text-field label="First name*" v-model="firstname" required></v-text-field>
                                     </v-col>
                                     <v-col cols="12" sm="6">
-                                        <v-text-field label="Last name*" v-model="lname"></v-text-field>
+                                        <v-text-field label="Last name*" v-model="lastname"></v-text-field>
                                     </v-col>
                                     <v-col cols="12">
                                         <v-text-field label="Email*" required v-model="username"></v-text-field>
@@ -87,7 +87,7 @@
 
                             <v-dialog v-model="dialog1" persistent max-width="600px">
                                 <template v-slot:activator="{ on, attrs }">
-                                    <v-btn color="blue darken-1" text v-bind="attrs" v-on="on">
+                                    <v-btn color="blue darken-1" text v-bind="attrs" v-on="on" @click="cons()">
                                         Next
                                     </v-btn>
                                 </template>
@@ -112,7 +112,7 @@
                                         <v-btn color="blue darken-1" text @click="dialog1 = false">
                                             Back
                                         </v-btn>
-                                        <v-btn color="blue darken-1" text @click="dialog1 = false">
+                                        <v-btn color="blue darken-1" text @click="registerUser()">
                                             Save
                                         </v-btn>
                                     </v-card-actions>
@@ -148,8 +148,8 @@ export default {
             password: "",
             dialog: false,
             dialog1: false,
-            fname: "",
-            lname: "",
+            firstname: "",
+            lastname: "",
             c_pass: "",
             gender: "",
             pref: [],
@@ -201,7 +201,7 @@ export default {
             try {
                 const response = await axios.post('//localhost:8000/api/login', { username: this.username, password: this.password })
 
-                const success = response.status
+                const success = (response.status == 200)
                 console.log(success)
 
                 if (success) {
@@ -212,6 +212,41 @@ export default {
                 console.log(err)
             }
 
+        },
+
+        async registerUser() {
+            const newUser = {
+                email: this.email,
+                firstname: this.firstname,
+                lastname: this.lastname,
+                password: this.password,
+                gender: this.gender,
+                preferences: this.pref,
+                dob: this.dob
+            }
+
+            try {
+                const response = await axios.post('//localhost:8000/api/signup', newUser)
+
+                const success = (response.status == 200)
+
+                if (success) {
+                    this.$router.push('/landingPage')
+                }
+            }
+            catch (err) {
+                console.log(err)
+            }
+        },
+
+        cons() {
+            console.log(this.username)
+            console.log(this.firstname)
+            console.log(this.lastname)
+            console.log(this.c_pass)
+            console.log(this.gender)
+            console.log(this.pref)
+            console.log(this.date)
         }
     },
 }
