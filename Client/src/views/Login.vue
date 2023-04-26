@@ -1,23 +1,23 @@
 <template>
     <div class="center">
         <v-row style="margin-top: 5vh;">
-            <v-col cols="8" sm="6" offset-sm="3" md="4" offset-md="4" offset="2"
+            <v-col cols="4" offset="4"
                 style="background-color: rgba(248, 237, 237, 1);">
                 <!-- <h1 style="color: white;">Login Page</h1> -->
                 <v-avatar size="100" tile>
                     <v-img src="@/assets/logo.png"></v-img>
                 </v-avatar>
-                <v-text-field label="Username" v-model="username"></v-text-field>
-                <v-text-field label="Password" type="password" v-model="password"></v-text-field>
-                <v-btn block elevation="2" @click="submit">
+                <v-text-field label="Username" v-model="username" style="margin-top: 2vh;"></v-text-field>
+                <v-text-field label="Password" type="password" v-model="password" style="margin-top: 2vh;"></v-text-field>
+                <v-btn block elevation="2" @click="submit" style="margin-top: 2vh;">
                     SIGN UP
                 </v-btn>
 
 
-                <v-row justify="center">
-                    <v-dialog v-model="dialog" persistent max-width="600px">
+                <!-- <v-row style="margin-top: 2vh;"> -->
+                    <v-dialog v-model="dialog" persistent max-width="600px" >
                         <template v-slot:activator="{ on, attrs }">
-                            <v-btn color="primary" dark v-bind="attrs" v-on="on">
+                            <v-btn block color="" v-bind="attrs" v-on="on" style="margin-top: 2vh;">
                                 REGISTER
                             </v-btn>
                         </template>
@@ -31,10 +31,8 @@
                                         <v-col cols="12" sm="6" md="4">
                                             <v-text-field label="First name*" required></v-text-field>
                                         </v-col>
-                                        
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field label="Last name*" hint=""
-                                                persistent-hint required></v-text-field>
+                                            <v-text-field label="Last name*" hint=""></v-text-field>
                                         </v-col>
                                         <v-col cols="12">
                                             <v-text-field label="Email*" required></v-text-field>
@@ -43,13 +41,12 @@
                                             <v-text-field label="Password*" type="password" required></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6">
-                                            <v-select :items="['18-29', '30-54', '54+']" label="Age*"
-                                                required></v-select>
+                                            <v-text-field label="Age*" required></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6">
                                             <v-autocomplete
-                                                :items="['Skiing', 'Ice hockey', 'Soccer', 'Basketball', 'Hockey', 'Reading', 'Writing', 'Coding', 'Basejump']"
-                                                label="Interests" multiple></v-autocomplete>
+                                                :items="['Lesbian', 'Gay', 'Bisexual', 'Trans', 'Queer', 'Pansexual', 'Other']"
+                                                label="Gender"></v-autocomplete>
                                         </v-col>
                                     </v-row>
                                 </v-container>
@@ -66,7 +63,7 @@
                             </v-card-actions>
                         </v-card>
                     </v-dialog>
-                </v-row>
+                <!-- </v-row> -->
 
 
 
