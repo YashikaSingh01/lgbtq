@@ -31,23 +31,6 @@
                 </v-sheet>
             </v-carousel-item>
         </v-carousel>
-        <v-sheet color="rgba(248, 237, 237, 1)" height="100%" tile>
-            <v-row class="fill-height" align="center" justify="center">
-                <v-col cols="6">
-                    <!-- <h3>--insert image--</h3> -->
-                    <v-img src="@/assets/images/pexels-alexander-grey-3738057.jpg" max-height="85vh"></v-img>
-                </v-col>
-                <v-col cols="4" offset="1" >
-                    <p class="carousel-text">Blogs.</p>
-                    <p class="carousel-text-small">
-                        Help the pride members in this significant phase of their lives. <br>
-                        Talk about your experiences coming out. <br>
-                        Talk about community anecdotes. <br>
-                        Talk about your experience with the app.
-                    </p>
-                </v-col>
-            </v-row>
-        </v-sheet> 
 
         <v-row style="padding-top: 5%;">
             <v-col cols="3" offset="2">

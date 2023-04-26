@@ -69,7 +69,7 @@
 
         <v-row style="margin-top: 10vh;">
             <v-col cols="10" offset="1" align-self="center">
-                <v-carousel v-model="cycle" :continuous="true" :cycle="cycle" delimiter-icon="mdi-minus"  hide-delimiter-background hide-delimeters 
+                <v-carousel v-model="cycle" :continuous="true" :cycle="cycle" delimiter-icon="mdi-minus"  hide-delimiter-background hide-delimeters
                 delimiter-icon-cycle height="70vh">
                     <v-carousel-item>
                         <v-sheet class="" color="rgba(248, 237, 237, 0.7)" height="100%" tile>
