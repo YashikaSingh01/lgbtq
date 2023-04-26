@@ -20,6 +20,11 @@ const routes = [
     name: 'home',
     component: HomeView
   },
+  // {
+  //   path: '/register',
+  //   name: 'register',
+  //   component: () => import('../views/Register.vue')
+  // },
   {
     path: '/about',
     name: 'about',
@@ -44,14 +49,14 @@ const routes = [
     component: Blogs
   },
   {
-    path: '/addBlog',
-    name: 'AddBlog',
-    component: AddBlog
-  },
-  {
     path: '/counselling',
     name: 'counselling',
     component: Counselling
+  },
+  {
+    path: '/addBlog',
+    name: 'AddBlog',
+    component: AddBlog
   },
 ]
 

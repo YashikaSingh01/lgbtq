@@ -32,8 +32,51 @@
             </v-carousel-item>
         </v-carousel>
 
-        <v-row style="padding-top: 5%;">
-            <v-col cols="3" offset="2">
+        <v-row style="margin-top: 10vh;"> 
+            <v-col cols="2" offset="1">
+                <v-card class="mx-auto rounded-xl center-align" max-width="344" height="30vh" color="purple">
+                    <v-card-text>
+                        <v-icon x-large style="text-align: center;">mdi-wechat</v-icon>
+                        <p class="text-h4 text--primary">
+                            Talk it out
+                        </p>
+                        <div class="text--primary">
+                            You can talk to counsellors about coming out and how adapting to this change is affecting you.
+                        </div>
+                    </v-card-text>
+                </v-card>
+            </v-col>
+            <v-col cols="2" offset="2">
+                <v-card class="mx-auto rounded-xl center-align" max-width="344" height="30vh" color="yellow">
+                    <v-card-text>
+                        <v-icon x-large style="text-align: center;">mdi-notebook-edit</v-icon>
+                        <p class="text-h4 text--primary">
+                            Blogs
+                        </p>
+                        <p class="text--primary">
+                            Read blogs! Read people's experiences. Read how they came out and what worked best for them.
+                        </p>
+                    </v-card-text>
+                </v-card>
+            </v-col>
+            <v-col cols="2" offset="2">
+                <v-card class="mx-auto rounded-xl center-align" max-width="344" height="30vh" color="green">
+                    <v-card-text>
+                        <v-icon x-large style="text-align: center;">mdi-heart-outline</v-icon>
+                        <p class="text-h4 text--primary">
+                            Safe Space
+                        </p>
+                        <div class="text--primary">
+                            Often queer people, we need queer spaces - because the only way to make connections is by
+                            feeling safe.
+                        </div>
+                    </v-card-text>
+                </v-card>
+            </v-col>
+        </v-row>
+
+        <v-row style="margin-top: 10vh;">
+            <v-col cols="4" offset="4" align-self="center">
                 <v-card class="blog-card" elevation="10" height="65vh">
                     <v-img class="white--text align-end" height="60%" alt=""
                         src="@/assets/images/pexels-marta-branco-1173576.jpg">
@@ -59,7 +102,10 @@
                     </v-card-actions>
                 </v-card>
             </v-col>
-            <v-col cols="3" offset="2">
+            </v-row>
+
+            <v-row style="margin-top: 7vh;">
+                <v-col cols="4" offset="4">
                 <v-card class="blog-card" elevation="10" height="65vh">
                     <v-img class="white--text align-end" height="60%" alt=""
                         src="@/assets/images/pexels-alexander-grey-3802075.jpg">
@@ -85,11 +131,13 @@
                     </v-card-actions>
                 </v-card>
             </v-col>
-        </v-row>
+            </v-row>
+            
 
-        <v-row style="padding-top: 2%;">
-            <v-col cols="3" offset="2">
-                <v-card class="blog-card" elevation="10" height="60vh">
+
+        <v-row style="margin-top: 7vh;">
+            <v-col cols="4" offset="4">
+                <v-card class="blog-card" elevation="10" height="65vh">
                     <v-img class="white--text align-end" height="60%" alt=""
                         src="@/assets/images/pexels-cottonbro-studio-3693901.jpg">
 
@@ -114,7 +162,10 @@
                     </v-card-actions>
                 </v-card>
             </v-col>
-            <v-col cols="3" offset="2">
+            </v-row>
+
+            <v-row style="margin-top: 7vh;">
+                <v-col cols="4" offset="4">
                 <v-card class="blog-card" elevation="10" height="60vh">
                     <v-img class="white--text align-end" height="60%" alt=""
                         src="@/assets/images/pexels-alexander-grey-1566842.jpg">
@@ -140,7 +191,9 @@
                     </v-card-actions>
                 </v-card>
             </v-col>
-        </v-row>
+            </v-row>
+            
+        
 
     </div>
 </template>
@@ -175,5 +228,9 @@ export default {
 
 .blog-card {
     background-color: rgba(248, 237, 237, 1);
+}
+
+.center-align {
+    text-align: center;
 }
 </style>
