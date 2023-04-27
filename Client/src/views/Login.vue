@@ -34,7 +34,7 @@
                                         <v-text-field label="Last name*" v-model="lastname"></v-text-field>
                                     </v-col>
                                     <v-col cols="12">
-                                        <v-text-field label="Email*" required v-model="username"></v-text-field>
+                                        <v-text-field label="Email*" required v-model="email"></v-text-field>
                                     </v-col>
                                     <v-col cols="12" sm="6">
                                         <v-text-field label="Password*" type="password" required
@@ -50,7 +50,7 @@
                                         <v-menu ref="menu" v-model="menu" :close-on-content-click="false"
                                             transition="scale-transition" offset-y min-width="auto">
                                             <template v-slot:activator="{ on, attrs }">
-                                                <v-text-field v-model="date" label="Date of birth*"
+                                                <v-text-field v-model="dob" label="Date of birth*"
                                                     prepend-icon="mdi-calendar" readonly v-bind="attrs" v-on="on"
                                                     required></v-text-field>
                                             </template>
@@ -144,7 +144,7 @@ import axios from 'axios'
 export default {
     data() {
         return {
-            username: "",
+            email: "",
             password: "",
             dialog: false,
             dialog1: false,
@@ -155,7 +155,7 @@ export default {
             pref: [],
 
             activePicker: null,
-            date: null,
+            dob: null,
             menu: false,
 
         }

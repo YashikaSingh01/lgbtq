@@ -64,10 +64,14 @@ app.post('/api/signup', async (req, res) => {
         const existingUser = await users.findOne({email: req.body.email})
         console.log(existingUser)
 
+        console.log(req.body)
+
         if(existingUser) {
-            res.status(409).json('User already exists. Please Login.')
+            res.status(400).json('User already exists. Please Login.')
             return
         }
+
+        
 
         const insertedUser = await users.insertOne(req.body)
 
