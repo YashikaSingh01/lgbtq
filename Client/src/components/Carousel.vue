@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div class="carousel-dimensions">
         <v-carousel v-model="cycle" :show-arrows-on-hover="true" :continuous="true" :cycle="cycle" hide-delimiter-background
-            delimiter-icon="mdi-minus" delimiter-icon- height="100vh">
+            delimiter-icon="mdi-minus" delimiter-icon- height="100%">
             <v-carousel-item>
                 <v-sheet class="" color="rgba(248, 237, 237, 1)"  tile>
                     <v-row class="" align="center" justify="center">
@@ -61,6 +61,10 @@ export default {
     
 <style lang="scss" scoped>
 
+.carousel-dimensions{
+    height: 100vh;
+}
+
 .carousel-image{
     height: 100vh;
     width: 50vw;
@@ -86,6 +90,10 @@ export default {
   .carousel-image{
     height: 400px;
     width: 220px;
+}
+
+.carousel-dimensions{
+    height: 400px;
 }
 
 }

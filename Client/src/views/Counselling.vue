@@ -231,10 +231,5 @@ export default {
     background-color: rgb(251, 229, 229);
 }
 
-@media screen and (max-width: 600px) {
-  .my-component {
-    background-color: red;
-  }
-}
 
 </style>

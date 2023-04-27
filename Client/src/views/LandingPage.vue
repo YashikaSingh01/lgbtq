@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Carousel class="carousel"></Carousel>
+        <Carousel></Carousel>
         <!-- <h1>WELCOME {{ this.user.firstname }}!</h1> -->
         <v-row style="margin-top: 4vh;">
             <v-col cols="6" offset="3">
@@ -15,8 +15,8 @@
         </v-row>
 
         <v-row class="">
-            <v-col md="2" offset-md="1" sm="5" offset-sm="1">
-                <v-card class="mx-auto rounded-xl center-align card"  color="purple"
+            <v-col cols="2" offset="1" sm="2" offset-sm="1">
+                <v-card class="mx-auto rounded-xl center-align "  color="purple" 
                     @click="goToCounseling">
                     <v-card-text>
                         <v-icon x-large style="text-align: center;">mdi-wechat</v-icon>
@@ -151,9 +151,9 @@ export default {
     height: 30vh;
 }
 
-.carousel{
-    height: 100vh;
-}
+// .carousel{
+//     height: 100vh;
+// }
 
 .center-align {
     text-align: center;
@@ -182,9 +182,9 @@ export default {
 
 @media screen and (max-width: 600px) {
 
-    .carousel {
-        height: 400px;
-    }
+    // .carousel {
+    //     height: 400px;
+    // }
 
     .text-below-carousel {
     font-size: 80%;
@@ -196,8 +196,9 @@ export default {
 }
 
 .card{
-    height: 30vh;
-    width: 300px;
+    height: 25vh;
+    width: 100%;
+    
 }
 }
 </style>
