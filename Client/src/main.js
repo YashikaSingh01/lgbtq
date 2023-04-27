@@ -19,3 +19,22 @@ new Vue({
 }).$mount('#app')
 
 
+<<<<<<< HEAD
+=======
+
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// // Your web app's Firebase configuration
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDWmCh9bhG-c2cFqwlTUizbSjUiRBlDFS4",
+//   authDomain: "lgbtq-1a81b.firebaseapp.com",
+//   projectId: "lgbtq-1a81b",
+//   storageBucket: "lgbtq-1a81b.appspot.com",
+//   messagingSenderId: "969959530127",
+//   appId: "1:969959530127:web:881998d3270d7636bb1afa"
+// };
+
+// // Initialize Firebase
+// const app = initializeApp(firebaseConfig);
+>>>>>>> ea9f1e451f1a83b6396e2832ee62f164fbac8749
