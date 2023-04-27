@@ -73,8 +73,8 @@
                 delimiter-icon-cycle height="70vh">
                     <v-carousel-item>
                         <v-sheet class="" color="rgba(248, 237, 237, 0.7)" height="100%" tile>
-                            <v-row style="height: 70%;">
-                                <v-col cols="4" offset="2" style="align-self: center;">
+                            <v-row style="height: 100%;">
+                                <v-col cols="4" offset="1" align-self="center">
                                     <v-card class="blog-card" elevation="10" height="65vh">
                                         <v-img class="white--text align-end" height="60%" alt=""
                                             src="@/assets/images/pexels-marta-branco-1173576.jpg">
@@ -85,6 +85,31 @@
                                             parents?</v-card-title>
 
                                         <v-card-subtitle class="pb-0">
+                                            3 minute read.
+                                        </v-card-subtitle>
+                                        <v-card-text class="text--primary">
+                                            Robyn Exton
+                                            <v-icon>mdi-circle-small</v-icon>
+                                            19th February 2018
+                                        </v-card-text>
+
+                                        <v-card-actions>
+                                            <v-btn color="rgba(109, 58, 69, 1)" text @click="openBlog1">
+                                                Read Now
+                                            </v-btn>
+                                        </v-card-actions>
+                                    </v-card>
+                                </v-col>
+                                <v-col cols="4" offset="2" align-self="center">
+                                    <v-card class="blog-card" elevation="10" height="65vh">
+                                        <v-img class="white--text align-end" height="60%" alt=""
+                                            src="@/assets/images/pexels-marta-branco-1173576.jpg">
+
+                                        </v-img>
+
+                                        <v-card-title style="word-break: keep-all">Don't know how to tell to your
+                                            parents?</v-card-title>
+                                            <v-card-subtitle class="pb-0">
                                             3 minute read.
                                         </v-card-subtitle>
 
@@ -101,6 +126,7 @@
                                         </v-card-actions>
                                     </v-card>
                                 </v-col>
+                                
                             </v-row>
                         </v-sheet>
                     </v-carousel-item>
@@ -108,6 +134,7 @@
                 </v-carousel>
             </v-col>
         </v-row>
+
 
 
     </div>
