@@ -74,7 +74,7 @@
                     <v-carousel-item>
                         <v-sheet class="" color="rgba(248, 237, 237, 0.7)" height="100%" tile>
                             <v-row style="height: 70%;">
-                                <v-col cols="3" offset="1" style="align-self: center;">
+                                <v-col cols="4" offset="2" style="align-self: center;">
                                     <v-card class="blog-card" elevation="10" height="65vh">
                                         <v-img class="white--text align-end" height="60%" alt=""
                                             src="@/assets/images/pexels-marta-branco-1173576.jpg">
