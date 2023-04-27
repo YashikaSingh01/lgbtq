@@ -136,7 +136,6 @@
                                     <v-card class="blog-card" elevation="10" height="60vh">
                                         <v-img class="white--text align-end" height="60%" alt=""
                                             src="@/assets/counselor photos/2.png">
-
                                         </v-img>
 
                                         <v-card-title style="word-break: keep-all">Bhavya Singh</v-card-title>
@@ -231,4 +230,11 @@ export default {
 .blog-card {
     background-color: rgb(251, 229, 229);
 }
+
+@media screen and (max-width: 600px) {
+  .my-component {
+    background-color: red;
+  }
+}
+
 </style>

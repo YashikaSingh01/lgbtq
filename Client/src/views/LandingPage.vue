@@ -1,10 +1,10 @@
 <template>
     <div>
-        <Carousel></Carousel>
-        <h1>WELCOME {{ this.user.firstname }}!</h1>
+        <Carousel class="carousel"></Carousel>
+        <!-- <h1>WELCOME {{ this.user.firstname }}!</h1> -->
         <v-row style="margin-top: 4vh;">
             <v-col cols="6" offset="3">
-                
+
                 <p class="center-align text-below-carousel">FIND A REAL CONNECTION</p>
                 <p class="center-align text-below-carousel">
                     We also believe in the power of technology to create a community and bring everyone closer.
@@ -13,10 +13,11 @@
                 </p>
             </v-col>
         </v-row>
- 
-        <v-row >
-            <v-col cols="2" offset="1">
-                <v-card class="mx-auto rounded-xl center-align" max-width="344" height="30vh" color="purple" @click="goToCounseling">
+
+        <v-row class="">
+            <v-col md="2" offset-md="1" sm="5" offset-sm="1">
+                <v-card class="mx-auto rounded-xl center-align card"  color="purple"
+                    @click="goToCounseling">
                     <v-card-text>
                         <v-icon x-large style="text-align: center;">mdi-wechat</v-icon>
                         <p class="text-h4 text--primary">
@@ -29,7 +30,8 @@
                 </v-card>
             </v-col>
             <v-col cols="2" offset="2">
-                <v-card class="mx-auto rounded-xl center-align" max-width="344" height="30vh" color="yellow" @click="goToBlogs">
+                <v-card class="mx-auto rounded-xl center-align" max-width="344" height="30vh" color="yellow"
+                    @click="goToBlogs">
                     <v-card-text>
                         <v-icon x-large style="text-align: center;">mdi-notebook-edit</v-icon>
                         <p class="text-h4 text--primary">
@@ -81,7 +83,7 @@
                             </div> -->
                         </v-col>
                         <v-col cols="6">
-                            <v-img class="rounded-xl" height="51vh" src="@/assets/images/pexels-alexander-grey-3738057.jpg">                            
+                            <v-img class="rounded-xl" height="51vh" src="@/assets/images/pexels-alexander-grey-3738057.jpg">
 
                             </v-img>
                         </v-col>
@@ -98,7 +100,7 @@ import VueCookies from 'vue-cookies'
 import axios from 'axios'
 import Vue from 'vue'
 
-Vue.use(VueCookies, { expires: '7d'})
+Vue.use(VueCookies, { expires: '7d' })
 
 export default {
     components: {
@@ -120,9 +122,9 @@ export default {
         }
     },
 
-    async mounted () {
+    async mounted() {
         try {
-            const response = await axios.post('//localhost:8000/api/getUserInfo', {email: this.$cookies.get("email")})
+            const response = await axios.post('//localhost:8000/api/getUserInfo', { email: this.$cookies.get("email") })
 
             const success = (response.status == 200)
             console.log(this.$cookies.get("email"))
@@ -139,6 +141,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.cards-row{
+    width: 100vw;
+    align-self: center;
+}
+
+.card{
+    height: 30vh;
+}
+
+.carousel{
+    height: 100vh;
+}
+
 .center-align {
     text-align: center;
 }
@@ -164,4 +180,24 @@ export default {
     font-size: 120%;
 }
 
+@media screen and (max-width: 600px) {
+
+    .carousel {
+        height: 400px;
+    }
+
+    .text-below-carousel {
+    font-size: 80%;
+}
+
+.cards-row{
+    width: 50vw;
+    align-self: center;
+}
+
+.card{
+    height: 30vh;
+    width: 300px;
+}
+}
 </style>
