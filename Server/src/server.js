@@ -102,6 +102,16 @@ app.post('/api/signup', async (req, res) => {
     client.close()
 })
 
+app.get('/api/getBlogs', async (req, res) => {
+    const client = await MongoClient.connect('mongodb://localhost:27017', {useNewUrlParser: true, useUnifiedTopology: true})
+    const db = client.db('lgbtq')
+
+    const blogList = await db.collection('blogs').find({}).toArray()
+    res.status(200).json(blogList)
+
+    client.close()
+})
+
 app.get('api/blogs/:blogId', async (req, res) => {
     const { blogId } = req.params
     const blog = blogs.find((blog) => blog.id === blogId)

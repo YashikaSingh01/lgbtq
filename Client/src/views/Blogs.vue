@@ -192,14 +192,23 @@
                 </v-card>
             </v-col>
             </v-row>
-            
-        
-
     </div>
 </template>
 
 <script>
+import axios from 'axios'
+import VueCookies from 'vue-cookies'
+import Vue from 'vue'
+
+
+
 export default {
+    data() {
+        return {
+            blogsList: []
+        }
+    },
+
     methods: {
         openBlog1() {
             this.$router.push('/blog1')
@@ -211,6 +220,23 @@ export default {
             this.$router.push('/counselling')
         },
     },
+
+    async created() {
+        try {
+            const response = await axios.get('//localhost:8000/api/getBlogs')
+
+            const success = (response.status == 200)
+            console.log(success)
+
+            if (success) {
+                this.blogsList = response.data
+                console.log(this.blogsList)
+            }
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
 }
 </script>
 

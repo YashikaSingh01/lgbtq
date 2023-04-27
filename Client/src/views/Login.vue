@@ -140,7 +140,6 @@
 
 <script>
 import axios from 'axios'
-import getAuth from 'firebase/auth'
 import VueCookies from 'vue-cookies'
 import Vue from 'vue'
 
