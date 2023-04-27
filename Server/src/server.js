@@ -87,8 +87,6 @@ app.post('/api/signup', async (req, res) => {
             return
         }
 
-        
-
         const insertedUser = await users.insertOne(req.body)
 
         //const token = jwt.sign(insertedUser)
@@ -108,6 +106,26 @@ app.get('/api/getBlogs', async (req, res) => {
 
     const blogList = await db.collection('blogs').find({}).toArray()
     res.status(200).json(blogList)
+
+    client.close()
+})
+
+app.post('/api/addBlog', async (req, res) => {
+    const client = await MongoClient.connect('mongodb://localhost:27017', {useNewUrlParser: true, useUnifiedTopology: true})
+    const db = client.db('lgbtq')
+
+    try {
+        const users = db.collection('blogs')
+        
+        const addedBlog = await users.insertOne(req.body)
+
+        //const token = jwt.sign(insertedUser)
+        if(addedBlog)
+            res.status(200).json(addedBlog.data._id)
+    }
+    catch (err) {
+        console.log(err)
+    }
 
     client.close()
 })

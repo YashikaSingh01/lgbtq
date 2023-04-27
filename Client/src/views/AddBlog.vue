@@ -17,25 +17,25 @@
 
                     <v-row>
                         <v-col cols="8" offset="2" style="margin-top: 3vh;">
-                            <v-text-field label="Title"></v-text-field>
+                            <v-text-field label="Title" v-model="title"></v-text-field>
                         </v-col>
                     </v-row>
 
                     <v-row>
                         <v-col cols="8" offset="2" style="margin-top: 2vh;">
-                            <v-text-field label="Subtitle"></v-text-field>
+                            <v-text-field label="Subtitle" v-model="subtitle"></v-text-field>
                         </v-col>
                     </v-row>
 
                     <v-row>
                         <v-col cols="8" offset="2" style="margin-top: 2vh;">
-                            <v-textarea label="Content"></v-textarea>
+                            <v-textarea label="Content" v-model="content"></v-textarea>
                         </v-col>
                     </v-row>
 
                     <v-row>
                         <v-col cols="8" offset="2" style="margin-top: 2vh; padding-bottom: 5vh;">
-                            <v-btn elevation="5" style="color: white; background-color: rgba(109, 58, 69, 1); width: 20vh;">
+                            <v-btn elevation="5" style="color: white; background-color: rgba(109, 58, 69, 1); width: 20vh;" @click="addBlog">
                                 Add Blog
                             </v-btn>
                         </v-col>
@@ -49,8 +49,62 @@
 </template>
 
 <script>
-export default {
+import axios from 'axios';
+import VueCookies from 'vue-cookies'
+import Vue from 'vue'
 
+Vue.use(VueCookies, { expires: '7d'})
+
+export default {
+    data() {
+        return {
+            user: [],
+            title: "",
+            subtitle: "",
+            content: ""
+        }
+    },
+
+    async mounted () {
+        try {
+            const response = await axios.post('//localhost:8000/api/getUserInfo', {email: this.$cookies.get("email")})
+
+            const success = (response.status == 200)
+            console.log(this.$cookies.get("email"))
+
+            if (success) {
+                this.user = response.data
+            }
+        }
+        catch (err) {
+            console.log(err)
+        }
+    },
+
+    methods: {
+        async addBlog() {
+            const newBlog = {
+                email: this.user.email,
+                title: this.title,
+                subtitle: this.subtitle,
+                content: this.content,
+                date: new Date()
+            }
+
+            try {
+                const response = await axios.post('//localhost:8000/api/addBlog', newBlog)
+
+                const success = (response.status == 200)
+
+                if (success) {
+                    this.$router.push('/blog1/:' + response.data)
+                }
+            }
+            catch (err) {
+                console.log(err)
+            }
+        }
+    },
 }
 </script>
 
