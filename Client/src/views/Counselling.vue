@@ -70,58 +70,114 @@
         <v-row style="margin-top: 10vh;">
             <v-col cols="10" offset="1" align-self="center">
                 <v-carousel v-model="cycle" :continuous="true" :cycle="cycle" delimiter-icon="mdi-minus"  hide-delimiter-background hide-delimeters
-                delimiter-icon-cycle height="70vh">
+                delimiter-icon- cycle height="70vh">
                     <v-carousel-item>
-                        <v-sheet class="" color="rgba(248, 237, 237, 0.7)" height="100%" tile>
+                        <v-sheet class="" color="rgba(248, 237, 237, 1)" height="100%" tile>
                             <v-row style="height: 100%;">
                                 <v-col cols="4" offset="1" align-self="center">
-                                    <v-card class="blog-card" elevation="10" height="65vh">
+                                    <v-card class="blog-card" elevation="10" height="60vh">
                                         <v-img class="white--text align-end" height="60%" alt=""
-                                            src="@/assets/images/pexels-marta-branco-1173576.jpg">
+                                            src="@/assets/counselor photos/1.png">
 
                                         </v-img>
 
-                                        <v-card-title style="word-break: keep-all">Don't know how to tell to your
-                                            parents?</v-card-title>
+                                        <v-card-title style="word-break: keep-all">Anindita Joshi</v-card-title>
 
                                         <v-card-subtitle class="pb-0">
-                                            3 minute read.
+                                            Baner, Pune
                                         </v-card-subtitle>
-                                        <v-card-text class="text--primary">
-                                            Robyn Exton
+                                        <v-card-text class="text--primary" style="margin-top: 0.5vh;">
+                                            27 Years
                                             <v-icon>mdi-circle-small</v-icon>
-                                            19th February 2018
+                                            MA, LMHC
                                         </v-card-text>
 
                                         <v-card-actions>
-                                            <v-btn color="rgba(109, 58, 69, 1)" text @click="openBlog1">
-                                                Read Now
+                                            <v-btn color="rgba(109, 58, 69, 1)" text >
+                                                Book an appointment
                                             </v-btn>
                                         </v-card-actions>
                                     </v-card>
                                 </v-col>
                                 <v-col cols="4" offset="2" align-self="center">
-                                    <v-card class="blog-card" elevation="10" height="65vh">
+                                    <v-card class="blog-card" elevation="10" height="60vh">
                                         <v-img class="white--text align-end" height="60%" alt=""
-                                            src="@/assets/images/pexels-marta-branco-1173576.jpg">
+                                            src="@/assets/counselor photos/4.png">
 
                                         </v-img>
 
-                                        <v-card-title style="word-break: keep-all">Don't know how to tell to your
-                                            parents?</v-card-title>
+                                        <v-card-title style="word-break: keep-all">Sakshi Mukherjee</v-card-title>
                                             <v-card-subtitle class="pb-0">
-                                            3 minute read.
+                                            Pashan, Pune
                                         </v-card-subtitle>
 
-                                        <v-card-text class="text--primary">
-                                            Robyn Exton
+                                        <v-card-text class="text--primary" style="margin-top: 0.5vh;">
+                                            24 Years
                                             <v-icon>mdi-circle-small</v-icon>
-                                            19th February 2018
+                                            MA, LPC
                                         </v-card-text>
 
                                         <v-card-actions>
-                                            <v-btn color="rgba(109, 58, 69, 1)" text @click="openBlog1">
-                                                Read Now
+                                            <v-btn color="rgba(109, 58, 69, 1)" text >
+                                                Book an appointment
+                                            </v-btn>
+                                        </v-card-actions>
+                                    </v-card>
+                                </v-col>
+                                
+                            </v-row>
+                        </v-sheet>
+                    </v-carousel-item>
+
+                    <v-carousel-item>
+                        <v-sheet class="" color="rgba(248, 237, 237, 1)" height="100%" tile>
+                            <v-row style="height: 100%;">
+                                <v-col cols="4" offset="1" align-self="center">
+                                    <v-card class="blog-card" elevation="10" height="60vh">
+                                        <v-img class="white--text align-end" height="60%" alt=""
+                                            src="@/assets/counselor photos/2.png">
+
+                                        </v-img>
+
+                                        <v-card-title style="word-break: keep-all">Bhavya Singh</v-card-title>
+
+                                        <v-card-subtitle class="pb-0">
+                                            Sus, Pune
+                                        </v-card-subtitle>
+                                        <v-card-text class="text--primary" style="margin-top: 0.5vh;">
+                                            43 Years
+                                            <v-icon>mdi-circle-small</v-icon>
+                                            MDC, MA
+                                        </v-card-text>
+
+                                        <v-card-actions>
+                                            <v-btn color="rgba(109, 58, 69, 1)" text >
+                                                Book an appointment
+                                            </v-btn>
+                                        </v-card-actions>
+                                    </v-card>
+                                </v-col>
+                                <v-col cols="4" offset="2" align-self="center">
+                                    <v-card class="blog-card" elevation="10" height="60vh">
+                                        <v-img class="white--text align-end" height="60%" alt=""
+                                            src="@/assets/counselor photos/3.png">
+
+                                        </v-img>
+
+                                        <v-card-title style="word-break: keep-all">Saloni Samant</v-card-title>
+                                            <v-card-subtitle class="pb-0">
+                                            Balewadi, Pune
+                                        </v-card-subtitle>
+
+                                        <v-card-text class="text--primary" style="margin-top: 0.5vh;">
+                                            26 Years
+                                            <v-icon>mdi-circle-small</v-icon>
+                                            LPC, MDC
+                                        </v-card-text>
+
+                                        <v-card-actions>
+                                            <v-btn color="rgba(109, 58, 69, 1)" text>
+                                                Book an appointment
                                             </v-btn>
                                         </v-card-actions>
                                     </v-card>
@@ -173,6 +229,6 @@ export default {
 }
 
 .blog-card {
-    background-color: rgba(248, 237, 237, 1);
+    background-color: rgb(251, 229, 229);
 }
 </style>
