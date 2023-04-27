@@ -59,7 +59,7 @@
                 <v-list-item-content class="justify-center">
                   <div class="mx-auto text-center">
                     <v-avatar color="brown">
-                      <span class="white--text text-h5">{{ user.initials }}</span>
+                      <span class="white--text text-h5" @click="goToUserProfile">{{ user.initials }}</span>
                     </v-avatar>
                     <h3>{{ user.fullName }}</h3>
                     <p class="text-caption mt-1">
@@ -146,6 +146,9 @@ export default {
     },
     goToLandingPage() {
       this.$router.push('/')
+    },
+    goToUserProfile() {
+      this.$router.push('/user')
     },
 
   },

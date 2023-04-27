@@ -8,6 +8,7 @@ import Blog1 from '../views/Blog1.vue'
 import AddBlog from '../views/AddBlog.vue'
 import Login from '../views/Login.vue'
 import Dashboard from '../views/Dashboard.vue'
+import UserProfile from '../views/UserProfile.vue'
 
 
 Vue.use(VueRouter)
@@ -61,6 +62,11 @@ const routes = [
     path: '/counselling',
     name: 'counselling',
     component: Counselling
+  },
+  {
+    path: '/user',
+    name: 'User',
+    component: UserProfile
   },
   {
     path: '/addBlog',
