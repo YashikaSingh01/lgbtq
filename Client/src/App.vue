@@ -101,7 +101,7 @@ export default {
       this.$router.push('/counselling')
     },
     goToLogin() {
-      this.$router.push('/')
+      this.$router.push('/login')
     },
 
   },
