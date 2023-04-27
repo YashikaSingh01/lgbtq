@@ -39,7 +39,7 @@
                 </v-card>
             </v-col>
             <v-col cols="2" offset="2">
-                <v-card class="mx-auto rounded-xl center-align" max-width="344" height="30vh" color="yellow">
+                <v-card class="mx-auto rounded-xl center-align" max-width="344" height="30vh" color="yellow" @click="goToBlogs">
                     <v-card-text>
                         <v-icon x-large style="text-align: center;">mdi-notebook-edit</v-icon>
                         <p class="text-h4 text--primary">
@@ -73,8 +73,8 @@
                 delimiter-icon-cycle height="70vh">
                     <v-carousel-item>
                         <v-sheet class="" color="rgba(248, 237, 237, 0.7)" height="100%" tile>
-                            <v-row style="height: 100%;">
-                                <v-col cols="3" offset="1" align-self="center">
+                            <v-row style="height: 70%;">
+                                <v-col cols="3" offset="1" style="align-self: center;">
                                     <v-card class="blog-card" elevation="10" height="65vh">
                                         <v-img class="white--text align-end" height="60%" alt=""
                                             src="@/assets/images/pexels-marta-branco-1173576.jpg">
@@ -115,6 +115,11 @@
 
 <script>
 export default {
+    methods: {
+        goToBlogs() {
+            this.$router.push('/blogs')
+        }
+    },
 
 }
 </script>

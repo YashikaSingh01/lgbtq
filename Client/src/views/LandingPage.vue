@@ -15,7 +15,7 @@
  
         <v-row >
             <v-col cols="2" offset="1">
-                <v-card class="mx-auto rounded-xl center-align" max-width="344" height="30vh" color="purple">
+                <v-card class="mx-auto rounded-xl center-align" max-width="344" height="30vh" color="purple" @click="goToCounseling">
                     <v-card-text>
                         <v-icon x-large style="text-align: center;">mdi-wechat</v-icon>
                         <p class="text-h4 text--primary">
@@ -28,7 +28,7 @@
                 </v-card>
             </v-col>
             <v-col cols="2" offset="2">
-                <v-card class="mx-auto rounded-xl center-align" max-width="344" height="30vh" color="yellow">
+                <v-card class="mx-auto rounded-xl center-align" max-width="344" height="30vh" color="yellow" @click="goToBlogs">
                     <v-card-text>
                         <v-icon x-large style="text-align: center;">mdi-notebook-edit</v-icon>
                         <p class="text-h4 text--primary">
@@ -96,6 +96,17 @@ import Carousel from '@/components/Carousel.vue'
 export default {
     components: {
         Carousel,
+    },
+
+    methods: {
+        goToCounseling() {
+            this.$router.push('/counselling')
+        },
+        goToBlogs() {
+            this.$router.push('/blogs')
+        }
+
+
     },
 }
 </script>

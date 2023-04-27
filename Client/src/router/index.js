@@ -6,14 +6,16 @@ import Blogs from '../views/Blogs.vue'
 import Counselling from '../views/Counselling.vue'
 import Blog1 from '../views/Blog1.vue'
 import AddBlog from '../views/AddBlog.vue'
+import Login from '../views/Login.vue'
+
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'login',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue')
+    name: 'landingPage',
+    component: LandingPage
   },
   {
     path: '/',
@@ -34,9 +36,9 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   {
-    path: '/landingPage',
-    name: 'landingPage',
-    component: LandingPage
+    path: '/login',
+    name: 'login',
+    component: Login
   },
   {
     path: '/blog1',

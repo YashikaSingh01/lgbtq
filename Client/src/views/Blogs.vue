@@ -34,7 +34,7 @@
 
         <v-row style="margin-top: 10vh;"> 
             <v-col cols="2" offset="1">
-                <v-card class="mx-auto rounded-xl center-align" max-width="344" height="30vh" color="purple">
+                <v-card class="mx-auto rounded-xl center-align" max-width="344" height="30vh" color="purple" @click="goToCounseling">
                     <v-card-text>
                         <v-icon x-large style="text-align: center;">mdi-wechat</v-icon>
                         <p class="text-h4 text--primary">
@@ -206,7 +206,10 @@ export default {
         },
         goToAddBlog(){
             this.$router.push('/addBlog')
-        }
+        },
+        goToCounseling() {
+            this.$router.push('/counselling')
+        },
     },
 }
 </script>
