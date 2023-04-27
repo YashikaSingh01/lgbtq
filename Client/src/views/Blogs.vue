@@ -75,24 +75,24 @@
             </v-col>
         </v-row>
 
-        <v-row style="margin-top: 10vh;">
+        <v-row style="margin-top: 10vh;" v-for="blogs in blogsList" :key="blogs.id">
             <v-col cols="4" offset="4" align-self="center">
                 <v-card class="blog-card" elevation="10" height="65vh">
                     <v-img class="white--text align-end" height="60%" alt=""
-                        src="@/assets/images/pexels-marta-branco-1173576.jpg">
+                        src="">
 
                     </v-img>
 
-                    <v-card-title style="word-break: keep-all">Don't know how to tell to your parents?</v-card-title>
+                    <v-card-title style="word-break: keep-all"> {{ blogs.title }} </v-card-title>
 
                     <v-card-subtitle class="pb-0">
-                        3 minute read.
+                        {{ blogs.subtitle }}
                     </v-card-subtitle>
 
                     <v-card-text class="text--primary">
-                        Robyn Exton
+                        {{ blogs.email }}
                         <v-icon>mdi-circle-small</v-icon>
-                        19th February 2018
+                        {{ blogs.date }}
                     </v-card-text>
 
                     <v-card-actions>
@@ -104,7 +104,7 @@
             </v-col>
             </v-row>
 
-            <v-row style="margin-top: 7vh;">
+            <!-- <v-row style="margin-top: 7vh;">
                 <v-col cols="4" offset="4">
                 <v-card class="blog-card" elevation="10" height="65vh">
                     <v-img class="white--text align-end" height="60%" alt=""
@@ -191,7 +191,7 @@
                     </v-card-actions>
                 </v-card>
             </v-col>
-            </v-row>
+            </v-row> -->
     </div>
 </template>
 

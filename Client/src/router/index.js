@@ -7,6 +7,7 @@ import Counselling from '../views/Counselling.vue'
 import Blog1 from '../views/Blog1.vue'
 import AddBlog from '../views/AddBlog.vue'
 import Login from '../views/Login.vue'
+import Dashboard from '../views/Dashboard.vue'
 
 
 Vue.use(VueRouter)
@@ -17,11 +18,7 @@ const routes = [
     name: 'landingPage',
     component: LandingPage
   },
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
+  
   // {
   //   path: '/register',
   //   name: 'register',
@@ -54,6 +51,11 @@ const routes = [
     path: '/blogs/:id',
     name: 'blog1',
     component: Blog1
+  },
+  {
+    path: '/dashboard',
+    name: 'dashboard',
+    component: Dashboard
   },
   {
     path: '/counselling',
