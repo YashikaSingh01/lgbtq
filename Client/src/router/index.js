@@ -48,6 +48,11 @@ const routes = [
     component: Blogs
   },
   {
+    path: '/blogs/:id',
+    name: 'blog1',
+    component: Blog1
+  },
+  {
     path: '/dashboard',
     name: 'dashboard',
     component: Dashboard

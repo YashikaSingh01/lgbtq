@@ -222,20 +222,21 @@ export default {
     },
 
     async created() {
-        try {
-            const response = await axios.get('//localhost:8000/api/getBlogs')
+            try {
+                const response = await axios.get('//localhost:8000/api/getBlogs')
 
-            const success = (response.status == 200)
-            console.log(success)
+                const success = (response.status == 200)
+                console.log(success)
 
-            if (success) {
-                this.blogsList = response.data
-                console.log(this.blogsList)
+                if (success) {
+                    this.blogsList = response.data
+                    this.$cookies.set("nob", this.blogsList.length)
+                    console.log(this.blogsList)
+                }
             }
-        }
-        catch (err) {
-            console.log(err)
-        }
+            catch (err) {
+                console.log(err)
+            }
     }
 }
 </script>

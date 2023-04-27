@@ -82,13 +82,30 @@ export default {
     },
 
     methods: {
+        async created() {
+        try {
+            const response = await axios.get('//localhost:8000/api/getBlogs')
+
+            const success = (response.status == 200)
+            console.log(success)
+
+            if (success) {
+                this.$cookies.set("nob", response.data.length)
+            }
+        }
+        catch (err) {
+            console.log(err)
+        }
+    },
+
         async addBlog() {
             const newBlog = {
                 email: this.user.email,
                 title: this.title,
                 subtitle: this.subtitle,
                 content: this.content,
-                date: new Date()
+                date: new Date(),
+                b_id: (parseInt(this.$cookies.get("nob")) + 1)
             }
 
             try {
@@ -97,7 +114,10 @@ export default {
                 const success = (response.status == 200)
 
                 if (success) {
-                    this.$router.push('/blog1/:' + response.data)
+                    console.log('lalallalalalalala')
+                    console.log(response.data)
+                    this.$cookies.set("nob", parseInt(this.$cookies.get("nob"))+1)
+                    this.$router.push('/blogs/' + response.data)
                 }
             }
             catch (err) {

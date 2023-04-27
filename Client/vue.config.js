@@ -10,3 +10,13 @@ module.exports = {
     proxy: 'http://localhost:8000/'
   }
 }
+
+module.exports = {
+  vue: {
+    configure: {
+      experiments: {
+        topLevelAwait: true,
+      },
+    },
+  },
+};
