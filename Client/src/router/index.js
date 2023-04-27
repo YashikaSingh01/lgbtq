@@ -51,6 +51,11 @@ const routes = [
     component: Blogs
   },
   {
+    path: '/blogs/:id',
+    name: 'blog1',
+    component: Blog1
+  },
+  {
     path: '/counselling',
     name: 'counselling',
     component: Counselling

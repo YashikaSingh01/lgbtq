@@ -115,16 +115,38 @@ app.post('/api/addBlog', async (req, res) => {
     const db = client.db('lgbtq')
 
     try {
-        const users = db.collection('blogs')
+        const blogs = db.collection('blogs')
         
-        const addedBlog = await users.insertOne(req.body)
+        const addedBlog = await blogs.insertOne(req.body)
 
         //const token = jwt.sign(insertedUser)
         if(addedBlog)
-            res.status(200).json(addedBlog.data._id)
+            res.status(200).json(req.body.b_id)
     }
     catch (err) {
         console.log(err)
+    }
+
+    client.close()
+})
+
+app.post('/api/getUserName', async (req, res) => {
+    const client = await MongoClient.connect('mongodb://localhost:27017', {useNewUrlParser: true, useUnifiedTopology: true})
+    const db = client.db('lgbtq')
+
+    const userEmail = req.body.email
+
+    const user = await db.collection('Users').findOne({email: userEmail})
+    console.log(user)
+
+    if(user) {
+        const fullname = user.firstname + ' ' + user.lastname
+        console.log(fullname)
+        
+        res.status(200).json(fullname + '')    
+    }
+    else {
+        res.status(404).json('Could not find user')
     }
 
     client.close()
