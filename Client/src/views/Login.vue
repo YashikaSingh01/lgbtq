@@ -6,9 +6,9 @@
                 <v-avatar size="100" tile>
                     <v-img src="@/assets/logo.png"></v-img>
                 </v-avatar>
-                <v-text-field label="Username" v-model="username" style="margin-top: 2vh;"></v-text-field>
+                <v-text-field label="Email" v-model="email" style="margin-top: 2vh;"></v-text-field>
                 <v-text-field label="Password" type="password" v-model="password" style="margin-top: 2vh;"></v-text-field>
-                <v-btn block elevation="2" @click="submit" style="margin-top: 2vh;">
+                <v-btn block elevation="2" @click="submit()" style="margin-top: 2vh;">
                     SIGN IN
                 </v-btn>
 
@@ -54,7 +54,7 @@
                                                     prepend-icon="mdi-calendar" readonly v-bind="attrs" v-on="on"
                                                     required></v-text-field>
                                             </template>
-                                            <v-date-picker v-model="date" :active-picker.sync="activePicker"
+                                            <v-date-picker v-model="dob" :active-picker.sync="activePicker"
                                                 :max="(new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10)"
                                                 min="1950-01-01" @change="save"></v-date-picker>
                                         </v-menu>
@@ -140,6 +140,12 @@
 
 <script>
 import axios from 'axios'
+import getAuth from 'firebase/auth'
+import VueCookies from 'vue-cookies'
+import Vue from 'vue'
+
+Vue.use(VueCookies, { expires: '7d'})
+
 
 export default {
     data() {
@@ -169,7 +175,7 @@ export default {
 
     computed: {
         alertMessage() {
-            if (!this.username) {
+            if (!this.email) {
                 return 'Please enter a username'
             }
             else {
@@ -199,13 +205,14 @@ export default {
             }
 
             try {
-                const response = await axios.post('//localhost:8000/api/login', { username: this.username, password: this.password })
+                const response = await axios.post('//localhost:8000/api/login', { email: this.email, password: this.password })
 
                 const success = (response.status == 200)
                 console.log(success)
 
                 if (success) {
-                    this.$router.push('/landingPage')
+                    this.$router.push('/')
+                    this.$cookies.set("email", this.email)
                 }
             }
             catch (err) {
@@ -231,7 +238,8 @@ export default {
                 const success = (response.status == 200)
 
                 if (success) {
-                    this.$router.push('/landingPage')
+                    this.$router.push('/')
+                    this.$cookies.set("email", this.email)
                 }
             }
             catch (err) {
@@ -246,7 +254,7 @@ export default {
             console.log(this.c_pass)
             console.log(this.gender)
             console.log(this.pref)
-            console.log(this.date)
+            console.log(this.dob)
         }
     },
 }

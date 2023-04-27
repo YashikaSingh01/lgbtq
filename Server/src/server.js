@@ -27,14 +27,30 @@ app.get('/trial', async (req, res) => {
     client.close()
 })
 
+app.post('/api/getUserInfo', async (req, res) => {
+    const client = await MongoClient.connect('mongodb://localhost:27017', {useNewUrlParser: true, useUnifiedTopology: true})
+    const db = client.db('lgbtq')
+
+    const user = await db.collection('Users').findOne({email: req.body.email})
+
+    if(user) {
+        res.status(200).json(user)
+    }
+    else {
+        res.status(404).json('Could not find user')
+    }
+
+    client.close()
+})
+
 app.post('/api/login', async (req, res) => {
     const client = await MongoClient.connect('mongodb://localhost:27017', {useNewUrlParser: true, useUnifiedTopology: true})
     const db = client.db('lgbtq')
 
-    const username = req.body.username
+    const enteredEmail = req.body.email
     const password = req.body.password
 
-    const user = await db.collection('Users').findOne({user_id: username})
+    const user = await db.collection('Users').findOne({email: enteredEmail})
     console.log(user)
 
     if(user) {

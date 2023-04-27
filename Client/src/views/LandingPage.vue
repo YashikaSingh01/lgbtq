@@ -1,6 +1,7 @@
 <template>
     <div>
         <Carousel></Carousel>
+        <h1>WELCOME {{ this.user.firstname }}!</h1>
         <v-row style="margin-top: 4vh;">
             <v-col cols="6" offset="3">
                 
@@ -93,9 +94,21 @@
 
 <script>
 import Carousel from '@/components/Carousel.vue'
+import VueCookies from 'vue-cookies'
+import axios from 'axios'
+import Vue from 'vue'
+
+Vue.use(VueCookies, { expires: '7d'})
+
 export default {
     components: {
         Carousel,
+    },
+
+    data() {
+        return {
+            user: {}
+        }
     },
 
     methods: {
@@ -105,8 +118,22 @@ export default {
         goToBlogs() {
             this.$router.push('/blogs')
         }
+    },
 
+    async mounted () {
+        try {
+            const response = await axios.post('//localhost:8000/api/getUserInfo', {email: this.$cookies.get("email")})
 
+            const success = (response.status == 200)
+            console.log(this.$cookies.get("email"))
+
+            if (success) {
+                this.user = response.data
+            }
+        }
+        catch (err) {
+            console.log(err)
+        }
     },
 }
 </script>
