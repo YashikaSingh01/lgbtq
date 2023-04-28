@@ -18,7 +18,7 @@ app.use(cors())
 // })
 
 app.get('/trial', async (req, res) => {
-    const client = await MongoClient.connect('mongodb://localhost:27017', {useNewUrlParser: true, useUnifiedTopology: true})
+    const client = await MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true, useUnifiedTopology: true })
     const db = client.db('lgbtq')
 
     const listOfUsers = await db.collection('Users').find({}).toArray()
@@ -28,12 +28,12 @@ app.get('/trial', async (req, res) => {
 })
 
 app.post('/api/getUserInfo', async (req, res) => {
-    const client = await MongoClient.connect('mongodb://localhost:27017', {useNewUrlParser: true, useUnifiedTopology: true})
+    const client = await MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true, useUnifiedTopology: true })
     const db = client.db('lgbtq')
 
-    const user = await db.collection('Users').findOne({email: req.body.email})
+    const user = await db.collection('Users').findOne({ email: req.body.email })
 
-    if(user) {
+    if (user) {
         res.status(200).json(user)
     }
     else {
@@ -44,24 +44,24 @@ app.post('/api/getUserInfo', async (req, res) => {
 })
 
 app.post('/api/login', async (req, res) => {
-    const client = await MongoClient.connect('mongodb://localhost:27017', {useNewUrlParser: true, useUnifiedTopology: true})
+    const client = await MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true, useUnifiedTopology: true })
     const db = client.db('lgbtq')
 
     const enteredEmail = req.body.email
     const password = req.body.password
 
-    const user = await db.collection('Users').findOne({email: enteredEmail})
+    const user = await db.collection('Users').findOne({ email: enteredEmail })
     console.log(user)
 
-    if(user) {
+    if (user) {
         const actualPassword = user.password
         console.log(password)
         console.log(actualPassword)
 
-        if(password == actualPassword)
+        if (password == actualPassword)
             res.status(200).json('Login Successful!')
         else
-            res.status(404).json('Incorrect Username or Password')    
+            res.status(404).json('Incorrect Username or Password')
     }
     else {
         res.status(404).json('Could not find user')
@@ -71,18 +71,18 @@ app.post('/api/login', async (req, res) => {
 })
 
 app.post('/api/signup', async (req, res) => {
-    const client = await MongoClient.connect('mongodb://localhost:27017', {useNewUrlParser: true, useUnifiedTopology: true})
+    const client = await MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true, useUnifiedTopology: true })
     const db = client.db('lgbtq')
 
     try {
         const users = db.collection('Users')
 
-        const existingUser = await users.findOne({email: req.body.email})
+        const existingUser = await users.findOne({ email: req.body.email })
         console.log(existingUser)
 
         console.log(req.body)
 
-        if(existingUser) {
+        if (existingUser) {
             res.status(400).json('User already exists. Please Login.')
             return
         }
@@ -90,7 +90,7 @@ app.post('/api/signup', async (req, res) => {
         const insertedUser = await users.insertOne(req.body)
 
         //const token = jwt.sign(insertedUser)
-        if(insertedUser)
+        if (insertedUser)
             res.status(200).json('Added User!')
     }
     catch (err) {
@@ -100,8 +100,29 @@ app.post('/api/signup', async (req, res) => {
     client.close()
 })
 
+app.post('/api/updateUser', async (req, res) => {
+    const client = await MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true, useUnifiedTopology: true })
+    const db = client.db('lgbtq')
+
+    try {
+        const users = db.collection('Users')
+        console.log(users)
+
+        var updatedUser = await users.updateOne({ email: req.body.email }, { $set: { firstname: req.body.firstname, lastname: req.body.lastname, about: req.body.about, preferences: req.body.preferences}}, function (req, res) {
+            if (err) throw err;
+            console.log("1 document updated");
+            db.close();
+        })
+        if (updatedUser)
+            res.status(200).json('Added User!')
+    }
+    catch (err) {
+        console.log(err)
+    }
+})
+
 app.get('/api/getBlogs', async (req, res) => {
-    const client = await MongoClient.connect('mongodb://localhost:27017', {useNewUrlParser: true, useUnifiedTopology: true})
+    const client = await MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true, useUnifiedTopology: true })
     const db = client.db('lgbtq')
 
     const blogList = await db.collection('blogs').find({}).toArray()
@@ -111,16 +132,16 @@ app.get('/api/getBlogs', async (req, res) => {
 })
 
 app.post('/api/addBlog', async (req, res) => {
-    const client = await MongoClient.connect('mongodb://localhost:27017', {useNewUrlParser: true, useUnifiedTopology: true})
+    const client = await MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true, useUnifiedTopology: true })
     const db = client.db('lgbtq')
 
     try {
         const blogs = db.collection('blogs')
-        
+
         const addedBlog = await blogs.insertOne(req.body)
 
         //const token = jwt.sign(insertedUser)
-        if(addedBlog)
+        if (addedBlog)
             res.status(200).json(req.body.b_id)
     }
     catch (err) {
@@ -131,19 +152,19 @@ app.post('/api/addBlog', async (req, res) => {
 })
 
 app.post('/api/getUserName', async (req, res) => {
-    const client = await MongoClient.connect('mongodb://localhost:27017', {useNewUrlParser: true, useUnifiedTopology: true})
+    const client = await MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true, useUnifiedTopology: true })
     const db = client.db('lgbtq')
 
     const userEmail = req.body.email
 
-    const user = await db.collection('Users').findOne({email: userEmail})
+    const user = await db.collection('Users').findOne({ email: userEmail })
     console.log(user)
 
-    if(user) {
+    if (user) {
         const fullname = user.firstname + ' ' + user.lastname
         console.log(fullname)
-        
-        res.status(200).json(fullname + '')    
+
+        res.status(200).json(fullname + '')
     }
     else {
         res.status(404).json('Could not find user')
@@ -155,7 +176,7 @@ app.post('/api/getUserName', async (req, res) => {
 app.get('api/blogs/:blogId', async (req, res) => {
     const { blogId } = req.params
     const blog = blogs.find((blog) => blog.id === blogId)
-    if(product) {
+    if (product) {
         res.status(200).json(blog)
     }
     else {

@@ -35,9 +35,48 @@
 </template>
 
 <script>
+import axios from 'axios';
+import VueCookies from 'vue-cookies'
+import Vue from 'vue'
+
+Vue.use(VueCookies, { expires: '7d'})
+
 export default {
+    data() {
+        return {
+            user: [],
+            potentialUsers: []
+        }
+    },
 
+    async mounted () {
+        try {
+            const response = await axios.post('//localhost:8000/api/getUserInfo', { email: this.$cookies.get("email") })
+
+            const success = (response.status == 200)
+            console.log(this.$cookies.get("email"))
+
+            if (success) {
+                this.user = response.data
+            }
+        }
+        catch (err) {
+            console.log(err)
+        };
+    },
+
+    async afterMount() {
+        try {
+            const response = await axios.post('//localhost:8000/api/getPotentialMatches', { preferences: this.user.preferences })
+
+            if (success) {
+                this.potentialUsers = response.data
+                console.log(this.potentialUsers)
+            }
+        }
+        catch (err) {
+            console.log(err)
+        };
+    }
 }
-</script>
 
-<style lang="scss" scoped></style>

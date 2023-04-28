@@ -96,7 +96,7 @@
                     </v-card-text>
 
                     <v-card-actions>
-                        <v-btn color="rgba(109, 58, 69, 1)" text @click="openBlog1">
+                        <v-btn color="rgba(109, 58, 69, 1)" text @click="openBlog1(blogs.b_id)">
                             Read Now
                         </v-btn>
                     </v-card-actions>
@@ -210,8 +210,8 @@ export default {
     },
 
     methods: {
-        openBlog1() {
-            this.$router.push('/blog1')
+        openBlog1(id) {
+            this.$router.push('/blogs/' + id)
         },
         goToAddBlog(){
             this.$router.push('/addBlog')
@@ -231,7 +231,7 @@ export default {
                 if (success) {
                     this.blogsList = response.data
                     this.$cookies.set("nob", this.blogsList.length)
-                    console.log(this.blogsList)
+                    console.log(this.blogsList.length)
                 }
             }
             catch (err) {

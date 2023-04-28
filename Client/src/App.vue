@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar app color="rgba(199, 199, 199, 0.5)" dark class="mobile-only" v-if="$vuetify.breakpoint.smAndUp">
       <div class="d-flex align-center main-icon">
-        <v-btn icon x-large v-on="on" @click="goToLandingPage">
+        <v-btn icon x-large v-on="" @click="goToLandingPage">
           <v-avatar tile size="90" style="margin-left: 5vh;">
             <v-img alt="Logo" class="shrink mr-2" contain src="@/assets/logo.png" transition="scale-transition"
               width="95" />
@@ -59,18 +59,18 @@
                 <v-list-item-content class="justify-center">
                   <div class="mx-auto text-center">
                     <v-avatar color="brown">
-                      <span class="white--text text-h5">{{ user.initials }}</span>
+                      <span class="white--text text-h5">{{ user.firstname[0] }}{{ user.lastname[0] }}</span>
                     </v-avatar>
-                    <h3>{{ user.fullName }}</h3>
+                    <h3>{{ user.firstname }} {{ user.lastname }}</h3>
                     <p class="text-caption mt-1">
                       {{ user.email }}
                     </p>
                     <v-divider class="my-3"></v-divider>
-                    <v-btn depressed rounded text>
+                    <v-btn depressed rounded text @click="goToUserProfile">
                       Edit Account
                     </v-btn>
                     <v-divider class="my-3"></v-divider>
-                    <v-btn depressed rounded text>
+                    <v-btn depressed rounded texts>
                       Logout
                     </v-btn>
                   </div>
@@ -80,10 +80,6 @@
           </v-row>
           <!-- </v-container> -->
         </div>
-
-
-
-
 
         <div class="mr-2" style="margin-left: 3vh;">
           <v-btn text color="rgba(109, 58, 69, 1)" style="font-size: 100%;" @click="goToLogin">LOGIN</v-btn>
@@ -119,16 +115,41 @@
 
 <script>
 import Footer from '@/components/Footer.vue'
+
+import VueCookies from 'vue-cookies'
+import axios from 'axios'
+import Vue from 'vue'
+
+Vue.use(VueCookies, { expires: '7d' })
+
 export default {
   name: 'App',
 
   data: () => ({
     user: {
-      initials: 'SG',
-      fullName: 'Shawn Geller',
-      email: 'shawngeller@gmail.com',
-    },
+      email: "",
+      firstname: "",
+      lastname: ""
+    }
   }),
+
+  async mounted() {
+    try {
+      if (this.$cookies.get("email")) {
+        const response = await axios.post('//localhost:8000/api/getUserInfo', { email: this.$cookies.get("email") })
+
+        const success = (response.status == 200)
+        console.log(this.$cookies.get("email"))
+
+        if (success) {
+          this.user = response.data
+        }
+      }
+    }
+    catch (err) {
+      console.log(err)
+    }
+  },
 
   components: {
     Footer,
@@ -142,10 +163,14 @@ export default {
       this.$router.push('/counselling')
     },
     goToLogin() {
+      this.$cookies.remove()
       this.$router.push('/login')
     },
     goToLandingPage() {
       this.$router.push('/')
+    },
+    goToUserProfile() {
+      this.$router.push('/user')
     },
 
   },
