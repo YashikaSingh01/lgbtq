@@ -40,6 +40,9 @@
           <v-btn text color="rgba(109, 58, 69, 1)" style="font-size: 100%;" @click="goToCounselling">COUNSELLING</v-btn>
         </div>
 
+        <div class="mr-2" style="margin-left: 3vh;">
+          <v-btn text color="rgba(109, 58, 69, 1)" style="font-size: 100%;" @click="goToLogin">LOGIN</v-btn>
+        </div>
 
         <div class="mr-2" style="margin-left: 3vh;">
           <!-- <v-container fluid style="height: 300px"> -->
@@ -81,9 +84,6 @@
           <!-- </v-container> -->
         </div>
 
-        <div class="mr-2" style="margin-left: 3vh;">
-          <v-btn text color="rgba(109, 58, 69, 1)" style="font-size: 100%;" @click="goToLogin">LOGIN</v-btn>
-        </div>
       </div>
 
 

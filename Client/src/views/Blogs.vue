@@ -79,7 +79,7 @@
             <v-col cols="4" offset="4" align-self="center">
                 <v-card class="blog-card" elevation="10" height="65vh">
                     <v-img class="white--text align-end" height="60%" alt=""
-                        src="">
+                        src="https://imgnew.outlookindia.com/uploadimage/library/16_9/16_9_5/IMAGE_1656649737.jpg">
 
                     </v-img>
 
