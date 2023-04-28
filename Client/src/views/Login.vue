@@ -76,7 +76,10 @@
                                     </v-col>
                                 </v-row>
                             </v-container>
+                            <div v-if="alert1">{{ alert1 }}</div>
                             <small>*indicates required field</small>
+                            <div v-if="alertMessage">{{ alertMessage }}</div>
+                            
                         </v-card-text>
                         <v-card-actions>
                             <v-spacer></v-spacer>
@@ -183,11 +186,21 @@ export default {
                 }
                 else if (this.password.length < 8) {
                     return 'Password should be at least 8 characters long'
-                } else if (this.password.length > 20) {
+                }else if (this.password.length >= 8 && this.password.length<=20) {
+                    
+                    return null
+                } 
+                
+                else if (this.password.length > 20) {
                     return 'Password should not be more than 20 characters long'
                 } else {
                     return null
                 }
+            }
+        },
+        alert1(){
+            if (this.password != this.c_pass){
+                return 'Password and confirm password not same'
             }
         }
     },
