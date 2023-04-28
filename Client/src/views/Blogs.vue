@@ -231,7 +231,7 @@ export default {
                 if (success) {
                     this.blogsList = response.data
                     this.$cookies.set("nob", this.blogsList.length)
-                    console.log(this.blogsList)
+                    console.log(this.blogsList.length)
                 }
             }
             catch (err) {
