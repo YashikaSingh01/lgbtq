@@ -4,6 +4,11 @@ import { MongoClient } from 'mongodb'
 import cors from 'cors'
 import jwt from 'jsonwebtoken'
 
+import multer from 'multer'
+
+
+require('dotenv').config();
+
 const app = express()
 app.use(express.json())
 app.use(bodyParser.json()) //Parses the json object which we have included with our req body and adds a body property to req

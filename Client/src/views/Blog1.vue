@@ -7,7 +7,7 @@
                     <v-row class="fill-height">
                         <v-col cols="6">
                             <!-- <h3>--insert image--</h3> -->
-                            <v-img src="" height="90vh" width="100%"></v-img>
+                            <v-img src="https://imgnew.outlookindia.com/uploadimage/library/16_9/16_9_5/IMAGE_1656649737.jpg" height="90vh" width="100%"></v-img>
                         </v-col>
                         <v-col cols="4" offset="1" align-self="center">
                             <p class="carousel-text">{{ blog.title }}</p>
