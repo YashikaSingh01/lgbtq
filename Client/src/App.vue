@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar app color="rgba(199, 199, 199, 0.5)" dark class="mobile-only" v-if="$vuetify.breakpoint.smAndUp">
       <div class="d-flex align-center main-icon">
-        <v-btn icon x-large v-on="" @click="goToLandingPage">
+        <v-btn icon x-large @click="goToLandingPage">
           <v-avatar tile size="90" style="margin-left: 5vh;">
             <v-img alt="Logo" class="shrink mr-2" contain src="@/assets/logo.png" transition="scale-transition"
               width="95" />

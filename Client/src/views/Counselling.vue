@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-carousel v-model="cycle" :show-arrows="false" :continuous="false" :cycle="cycle" hide-delimiter-background
+        <v-carousel v-model="cycle" :show-arrows="false" :continuous="false"  hide-delimiter-background
             hide-delimiters height="90vh">
             <v-carousel-item>
                 <v-sheet class="" color="rgba(248, 237, 237, 1)" height="" tile>
