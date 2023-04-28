@@ -122,7 +122,7 @@ export default {
         }
     },
 
-    async mounted() {
+    async afterMount() {
         try {
             const response = await axios.post('//localhost:8000/api/getUserInfo', { email: this.$cookies.get("email") })
 

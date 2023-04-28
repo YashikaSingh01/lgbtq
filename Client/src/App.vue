@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar app color="rgba(199, 199, 199, 0.5)" dark>
       <div class="d-flex align-center main-icon">
-        <v-btn icon x-large v-on="on" @click="goToLandingPage">
+        <v-btn icon x-large v-on="" @click="goToLandingPage">
           <v-avatar tile size="90" style="margin-left: 5vh;">
             <v-img alt="Logo" class="shrink mr-2" contain src="@/assets/logo.png" transition="scale-transition"
               width="95" />
@@ -66,7 +66,7 @@
                       {{ user.email }}
                     </p>
                     <v-divider class="my-3"></v-divider>
-                    <v-btn depressed rounded text>
+                    <v-btn depressed rounded text @click="goToUserProfile">
                       Edit Account
                     </v-btn>
                     <v-divider class="my-3"></v-divider>
@@ -168,6 +168,9 @@ export default {
     },
     goToLandingPage() {
       this.$router.push('/')
+    },
+    goToUserProfile() {
+      this.$router.push('/user')
     },
 
   },
