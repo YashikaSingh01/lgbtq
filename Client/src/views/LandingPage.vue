@@ -15,9 +15,8 @@
         </v-row>
 
         <v-row class="">
-            <v-col cols="2" offset="1" sm="2" offset-sm="1">
-                <v-card class="mx-auto rounded-xl center-align "  color="purple" 
-                    @click="goToCounseling">
+            <v-col v-bind:cols="computedCols" v-bind:offset="computedOffset">
+                <v-card class="mx-auto rounded-xl center-align " color="purple" @click="goToCounseling">
                     <v-card-text>
                         <v-icon x-large style="text-align: center;">mdi-wechat</v-icon>
                         <p class="text-h4 text--primary">
@@ -29,22 +28,23 @@
                     </v-card-text>
                 </v-card>
             </v-col>
-            <v-col cols="2" offset="2">
-                <v-card class="mx-auto rounded-xl center-align" max-width="344" height="30vh" color="yellow"
-                    @click="goToBlogs">
+            <v-col v-bind:cols="computedCols" v-bind:offset="computedOffset2">
+                <v-card class="mx-auto rounded-xl center-align " color="yellow" @click="goToBlogs">
                     <v-card-text>
                         <v-icon x-large style="text-align: center;">mdi-notebook-edit</v-icon>
                         <p class="text-h4 text--primary">
                             Blogs
                         </p>
-                        <p class="text--primary">
+                        <div class="text--primary">
                             Read blogs! Read people's experiences. Read how they came out and what worked best for them.
-                        </p>
+                        </div>
                     </v-card-text>
                 </v-card>
             </v-col>
-            <v-col cols="2" offset="2">
-                <v-card class="mx-auto rounded-xl center-align" max-width="344" height="30vh" color="green">
+
+
+            <v-col v-bind:cols="computedCols" v-bind:offset="computedOffset2">
+                <v-card class="mx-auto rounded-xl center-align" color="green">
                     <v-card-text>
                         <v-icon x-large style="text-align: center;">mdi-heart-outline</v-icon>
                         <p class="text-h4 text--primary">
@@ -59,7 +59,7 @@
             </v-col>
         </v-row>
 
-        <br>
+        <br><br>
 
         <v-row>
             <v-col cols="10" offset="1">
@@ -103,6 +103,38 @@ import Vue from 'vue'
 Vue.use(VueCookies, { expires: '7d' })
 
 export default {
+    computed: {
+        computedCols() {
+            if (this.$vuetify.breakpoint.mdAndUp) {
+                return 2;
+            } else if (this.$vuetify.breakpoint.smAndUp) {
+                return 4;
+            } else {
+                return 6;
+            }
+        },
+
+        computedOffset() {
+            if (this.$vuetify.breakpoint.mdAndUp) {
+                return 1;
+            } else if (this.$vuetify.breakpoint.smAndUp) {
+                return 3;
+            } else {
+                return 3;
+            }
+        },
+
+        computedOffset2() {
+            if (this.$vuetify.breakpoint.mdAndUp) {
+                return 2;
+            } else if (this.$vuetify.breakpoint.smAndUp) {
+                return 3;
+            } else {
+                return 3;
+            }
+        }
+    },
+
     components: {
         Carousel,
     },
@@ -141,20 +173,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-.cards-row{
-    width: 100vw;
-    align-self: center;
-}
-
-.card{
-    height: 30vh;
-}
-
-// .carousel{
-//     height: 100vh;
-// }
-
 .center-align {
     text-align: center;
 }
@@ -187,18 +205,13 @@ export default {
     // }
 
     .text-below-carousel {
-    font-size: 80%;
+        font-size: 80%;
+    }
+
+    .coming-out-text {
+    margin: 5%;
+    font-size: 75%;
 }
 
-.cards-row{
-    width: 50vw;
-    align-self: center;
-}
-
-.card{
-    height: 25vh;
-    width: 100%;
-    
-}
 }
 </style>
